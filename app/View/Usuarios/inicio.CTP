@@ -109,7 +109,7 @@ require ("cabeza.ctp");
                   echo $idgrupoapoyo;
                   session_start(); 
 
-                $_SESSION["idvariable"] = $fila3id[0];
+                 $_SESSION["idvariable"] = $fila3id[0];
                   echo "<script language='JavaScript'>";                    
                   echo "location = '../grupoapoyos/inicio'"; 
                   echo "</script>"; 
@@ -146,8 +146,28 @@ require ("cabeza.ctp");
                  
                  if($fila5[0]==5)
                  {
+                      $consultaid5 = "SELECT iduempleador FROM uempleador WHERE nombreUsuario= '$nomUsuario'";                      
+                     $tipo5consultaid = mysql_query($consultaid5); 
+
+                     if(!$tipo5consultaid)
+                     {
+                        echo "No se pudo ejecutar la consulta";
+                     }
+                      $fila5id=mysql_fetch_row($tipo5consultaid);
+
+                      
+                      global $idempleador;
+                     $idempleador = $fila5id[0];
+                      echo $idempleador;
+                      session_start(); 
+
+                     $_SESSION["idempleador"] = $fila5id[0];
+                      echo "<script language='JavaScript'>";                    
+                      echo "location = '../lugarempleos/inicio'"; 
+                      echo "</script>"; 
+                      
                     echo "El usuario es Empleador";// acá se hace el enlace para que pueda ingresar a los privilegios que tiene como usuario
-                     echo $fila5[0];
+                    
 
                  }
                  else
