@@ -77,8 +77,30 @@ require ("cabeza.ctp");
                  
                  if($fila2[0]==2)
                  {
+
+                     $consultaid2 = "SELECT idumedico FROM umedico WHERE nombreUsuario= '$nomUsuario'";                      
+                     $tipo2consultaid = mysql_query($consultaid2); 
+
+                     if(!$tipo2consultaid)
+                     {
+                        echo "No se pudo ejecutar la consulta";
+                     }
+                      $fila2id=mysql_fetch_row($tipo2consultaid);
+
+                      
+                      global $idmedico;
+                     $idmedico = $fila2id[0];
+                      echo $idmedico;
+                      session_start(); 
+
+                     $_SESSION["idmedico"] = $fila2id[0];
+                      echo "<script language='JavaScript'>";                    
+                      echo "location = '../apoyomedicos/inicio'"; 
+                      echo "</script>"; 
+
+
                     echo "El usuario es Medico";// acá se hace el enlace para que pueda ingresar a los privilegios que tiene como usuario
-                     echo $fila2[0];
+                     
 
                  }
                  //////////////////////////////////////

@@ -1,54 +1,64 @@
-<div class="apoyomedicos index">
-	<h2><?php echo __('Apoyomedicos'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
-	<thead>
-	<tr>
-			<th><?php echo $this->Paginator->sort('idapoyoMedico'); ?></th>
-			<th><?php echo $this->Paginator->sort('especialista'); ?></th>
-			<th><?php echo $this->Paginator->sort('nombre'); ?></th>
-			<th><?php echo $this->Paginator->sort('direccion'); ?></th>
-			<th><?php echo $this->Paginator->sort('telefono'); ?></th>
-			<th><?php echo $this->Paginator->sort('umedico_idumedico'); ?></th>
-			<th><?php echo $this->Paginator->sort('listaFavoritos_idlistaFavoritos'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
-	</tr>
-	</thead>
-	<tbody>
-	<?php foreach ($apoyomedicos as $apoyomedico): ?>
-	<tr>
-		<td><?php echo h($apoyomedico['Apoyomedico']['idapoyoMedico']); ?>&nbsp;</td>
-		<td><?php echo h($apoyomedico['Apoyomedico']['especialista']); ?>&nbsp;</td>
-		<td><?php echo h($apoyomedico['Apoyomedico']['nombre']); ?>&nbsp;</td>
-		<td><?php echo h($apoyomedico['Apoyomedico']['direccion']); ?>&nbsp;</td>
-		<td><?php echo h($apoyomedico['Apoyomedico']['telefono']); ?>&nbsp;</td>
-		<td><?php echo h($apoyomedico['Apoyomedico']['umedico_idumedico']); ?>&nbsp;</td>
-		<td><?php echo h($apoyomedico['Apoyomedico']['listaFavoritos_idlistaFavoritos']); ?>&nbsp;</td>
-		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $apoyomedico['Apoyomedico']['idapoyoMedico'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $apoyomedico['Apoyomedico']['idapoyoMedico'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $apoyomedico['Apoyomedico']['idapoyoMedico']), array(), __('Are you sure you want to delete # %s?', $apoyomedico['Apoyomedico']['idapoyoMedico'])); ?>
-		</td>
-	</tr>
-<?php endforeach; ?>
-	</tbody>
-	</table>
-	<p>
-	<?php
-	echo $this->Paginator->counter(array(
-	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
-	));
-	?>	</p>
-	<div class="paging">
-	<?php
-		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
-		echo $this->Paginator->numbers(array('separator' => ''));
-		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
-	?>
-	</div>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Apoyomedico'), array('action' => 'add')); ?></li>
-	</ul>
-</div>
+<?php
+require ("cabeza.ctp");
+?>
+ <?php 
+    session_start();//crea una sesión para ser usada mediante una petición GET o POST, o pasado por una cookie y la sentencia include_once es la usaremos para incluir el archivo de conexión a la base de datos que creamos anteriormente.
+    include_once "conexion.php"; ?>
+<div class="main-container">
+        <article class="box" id="home_featured21">
+            <div class="block"><h2>Registrar Apoyo Medico</h2>
+
+            			<h2>.</h2>
+                <form action="" method="post" class="registro"> 
+	                <div><label>Nombre:</label> 
+	                    <input type="text" name="nombre"></div> 
+	                <div><label>Especialista:</label> 
+	                    <input type="text" name="especialista"></div> 
+	                <div><label>Direccion:</label> 
+	                    <input type="text" name="direccion"></div> 
+	                <div><label>Telefono:</label> 
+	                    <input type="text" name="telefono"></div> 
+	          		
+	          	 	<input type="submit" name="enviar" value="Registrar"></div>
+	            </form> 
+	            </div>	 	
+        </article>
+       </div>
+
+       <?php
+
+            $nombre=$_POST['nombre']; 
+            $direccion=$_POST['direccion']; 
+            $telefono=$_POST['telefono']; 
+            $especialista=$_POST['especialista'];
+
+            if($_POST['nombre'] == '' or $_POST['direccion'] == '' or $_POST['telefono'] == '') 
+            {
+            	echo 'Por favor llene todos los campos.';//Si los campos están vacíos.
+            }
+            else 
+		    { 
+                session_start(); 
+                $idmedico=$_SESSION["idmedico"];
+           
+		    	
+		    	 $consultaE = "INSERT INTO apoyomedico(`idapoyoMedico`, `especialista`, `nombre`, `direccion`, `telefono`, `umedico_idumedico`, `listaFavoritos_idlistaFavoritos`)VALUES ('','$especialista','$nombre','$direccion','$telefono','$idmedico',null) ; ";
+                             
+                 $consulta = mysql_query($consultaE); 
+
+                 if(!$consulta)
+                 {
+                    echo "No se pudo ejecutar la consulta ";
+                 }
+                 else
+                 {
+                 	echo "el registro de grupo de Apoyo fue exitoso";
+                 }
+
+		    	
+
+		    }
+    ?>
+<?php
+require ("footer.ctp");
+?>
