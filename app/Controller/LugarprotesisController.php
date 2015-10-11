@@ -104,4 +104,7 @@ class LugarprotesisController extends AppController {
 	public function inicio() {
 
 	}
+	public function protesis() {
+
+	}
 }

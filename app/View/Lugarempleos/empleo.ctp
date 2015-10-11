@@ -70,7 +70,7 @@ require ("cabeza.ctp");
                  }
                  else
                  {
-                 	echo "el registro de grupo del Empleo Fue exitoso";
+                 	echo "el registro del Empleo Fue exitoso";
                  }
 
 		    }
