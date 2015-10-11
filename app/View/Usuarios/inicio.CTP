@@ -130,8 +130,27 @@ require ("cabeza.ctp");
                  
                  if($fila4[0]==4)
                  {
+                     $consultaid4 = "SELECT idutiendaprotesis FROM utiendaprotesis WHERE nombreUsuario= '$nomUsuario'";                      
+                     $tipo4consultaid = mysql_query($consultaid4); 
+
+                     if(!$tipo4consultaid)
+                     {
+                        echo "No se pudo ejecutar la consulta";
+                     }
+                      $fila4id=mysql_fetch_row($tipo4consultaid);
+
+                      
+                      global $idtprotesis;
+                     $idtprotesis = $fila4id[0];
+                      echo $idtprotesis;
+                      session_start(); 
+
+                     $_SESSION["idtprotesis"] = $fila4id[0];
+                      echo "<script language='JavaScript'>";                    
+                      echo "location = '../lugarprotesis/inicio'"; 
+                      echo "</script>"; 
                     echo "El usuario es Tienda Protesis";// acá se hace el enlace para que pueda ingresar a los privilegios que tiene como usuario
-                     echo $fila4[0];
+                     
 
                  }
                  ///////////////////////////////////////////////

@@ -1,50 +1,61 @@
-<div class="lugarprotesis index">
-	<h2><?php echo __('Lugarprotesis'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
-	<thead>
-	<tr>
-			<th><?php echo $this->Paginator->sort('idlugarProtesis'); ?></th>
-			<th><?php echo $this->Paginator->sort('nombre'); ?></th>
-			<th><?php echo $this->Paginator->sort('direccion'); ?></th>
-			<th><?php echo $this->Paginator->sort('telefono'); ?></th>
-			<th><?php echo $this->Paginator->sort('utiendaProtesis_idutiendaProtesis'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
-	</tr>
-	</thead>
-	<tbody>
-	<?php foreach ($lugarprotesis as $lugarprotesi): ?>
-	<tr>
-		<td><?php echo h($lugarprotesi['Lugarprotesi']['idlugarProtesis']); ?>&nbsp;</td>
-		<td><?php echo h($lugarprotesi['Lugarprotesi']['nombre']); ?>&nbsp;</td>
-		<td><?php echo h($lugarprotesi['Lugarprotesi']['direccion']); ?>&nbsp;</td>
-		<td><?php echo h($lugarprotesi['Lugarprotesi']['telefono']); ?>&nbsp;</td>
-		<td><?php echo h($lugarprotesi['Lugarprotesi']['utiendaProtesis_idutiendaProtesis']); ?>&nbsp;</td>
-		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $lugarprotesi['Lugarprotesi']['idlugarProtesis'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $lugarprotesi['Lugarprotesi']['idlugarProtesis'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $lugarprotesi['Lugarprotesi']['idlugarProtesis']), array(), __('Are you sure you want to delete # %s?', $lugarprotesi['Lugarprotesi']['idlugarProtesis'])); ?>
-		</td>
-	</tr>
-<?php endforeach; ?>
-	</tbody>
-	</table>
-	<p>
-	<?php
-	echo $this->Paginator->counter(array(
-	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
-	));
-	?>	</p>
-	<div class="paging">
-	<?php
-		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
-		echo $this->Paginator->numbers(array('separator' => ''));
-		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
-	?>
-	</div>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Lugarprotesi'), array('action' => 'add')); ?></li>
-	</ul>
-</div>
+<?php
+require ("cabeza.ctp");
+?>
+ <?php 
+    session_start();//crea una sesión para ser usada mediante una petición GET o POST, o pasado por una cookie y la sentencia include_once es la usaremos para incluir el archivo de conexión a la base de datos que creamos anteriormente.
+    include_once "conexion.php"; ?>
+<div class="main-container">
+        <article class="box" id="home_featured21">
+            <div class="block"><h2>Registrar Lugar Protesis</h2>
+
+            			<h2>.</h2>
+                <form action="" method="post" class="registro"> 
+	                <div><label>Nombre:</label> 
+	                    <input type="text" name="nombre"></div> 
+	                <div><label>Direccion:</label> 
+	                    <input type="text" name="direccion"></div> 
+	                <div><label>Telefono:</label> 
+	                    <input type="text" name="telefono"></div> 
+	          		
+	          	 	<input type="submit" name="enviar" value="Registrar"></div>
+	            </form> 
+	            </div>	 	
+        </article>
+       </div>
+
+       <?php
+
+            $nombre=$_POST['nombre']; 
+            $direccion=$_POST['direccion']; 
+            $telefono=$_POST['telefono']; 
+
+            if($_POST['nombre'] == '' or $_POST['direccion'] == '' or $_POST['telefono'] == '') 
+            {
+            	echo 'Por favor llene todos los campos.';//Si los campos están vacíos.
+            }
+            else 
+		    { 
+                session_start(); 
+                $idtprotesis=$_SESSION["idtprotesis"];
+           
+		    	
+		    	 $consultaE = "INSERT INTO `lugarprotesis`(`idlugarProtesis`, `nombre`, `direccion`, `telefono`, `utiendaProtesis_idutiendaProtesis`) VALUES ('','$nombre','$direccion','$telefono',$idtprotesis) ; ";
+                             
+                 $consulta = mysql_query($consultaE); 
+
+                 if(!$consulta)
+                 {
+                    echo "No se pudo ejecutar la consulta ";
+                 }
+                 else
+                 {
+                 	echo "el registro de grupo de Apoyo fue exitoso";
+                 }
+
+		    	
+
+		    }
+    ?>
+<?php
+require ("footer.ctp");
+?>

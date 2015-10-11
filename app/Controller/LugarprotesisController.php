@@ -101,4 +101,7 @@ class LugarprotesisController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+	public function inicio() {
+
+	}
 }
