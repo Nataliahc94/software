@@ -104,4 +104,7 @@ class LugarempleosController extends AppController {
 	public function inicio() {
 
 	}
+	public function empleo() {
+
+	}
 }

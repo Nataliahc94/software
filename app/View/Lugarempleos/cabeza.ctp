@@ -9,7 +9,9 @@
         
              <div id="nav-container">
                 <head>
-                    <a href="./index" >Registrar Medico</a>
+                    <a href="./index" >Registrar Lugar Empleo</a>
+                    <a href="./empleo" >Registrar Empleo</a>
+
                 </head>
             </div>
          
@@ -44,7 +46,7 @@
         <nav>
             <ul class="nav">
                 <li class="active"><a href="home">Home</a></li>
-                <li><a href="portfolio.html">Apoyo Medico</a>
+                <li><a href="portfolio.html">Empleos</a>
                     <ul>
                         <li><a href="#">Cucuta</a>
                             <ul>
