@@ -1,3 +1,6 @@
+<?php
+require ("cabeza.ctp");
+?>
 <div class="empleos index">
 	<h2><?php echo __('Empleos'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
@@ -50,3 +53,6 @@
 		<li><?php echo $this->Html->link(__('New Empleo'), array('action' => 'add')); ?></li>
 	</ul>
 </div>
+<?php
+require ("footer.ctp");
+?>

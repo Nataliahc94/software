@@ -1,3 +1,7 @@
+<?php
+require ("cabeza.ctp");
+?>
+
 <div class="protesis index">
 	<h2><?php echo __('Protesis'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
@@ -52,3 +56,6 @@
 		<li><?php echo $this->Html->link(__('New Protesi'), array('action' => 'add')); ?></li>
 	</ul>
 </div>
+<?php
+require ("footer.ctp");
+?>

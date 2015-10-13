@@ -46,7 +46,7 @@
         <nav>
             <ul class="nav">
                 <li class="active"><a href="home">Home</a></li>
-                <li><a href="portfolio.html">Protesis</a>
+                <li><a href="../protesis/index">Protesis</a>
                     <ul>
                         <li><a href="#">Cucuta</a>
                             <ul>
