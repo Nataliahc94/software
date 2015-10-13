@@ -23,8 +23,10 @@ require ("cabeza.ctp");
     session_start();//crea una sesión para ser usada mediante una petición GET o POST, o pasado por una cookie y la sentencia include_once es la usaremos para incluir el archivo de conexión a la base de datos que creamos anteriormente.
     include_once "conexion.php"; ?>
 
-   <article class="footbox last">
-        <div id="social">
+ <div class="main-container">
+        <article class="box" id="home_featured21">
+            <div class="block"><h2>Registrar Usuario</h2>
+                <h2>.</h2>
              <form action="" method="post" class="registro"> 
                 <div><label>Nombre:</label> 
                     <input type="text" name="usuario"></div> 
@@ -55,7 +57,8 @@ require ("cabeza.ctp");
                 <input type="submit" name="enviar" value="Registrar"></div> 
             </form> 
         </div>
-     </article>       
+     </article> 
+  </div>       
 
 
 <?php

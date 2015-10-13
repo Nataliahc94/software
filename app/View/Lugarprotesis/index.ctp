@@ -35,6 +35,7 @@ require ("cabeza.ctp");
             }
             else 
 		    { 
+                
                 session_start(); 
                 $idtprotesis=$_SESSION["idtprotesis"];
            
