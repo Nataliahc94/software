@@ -7,20 +7,34 @@ require ("cabeza.ctp");
 <div class="main-container">
         <article class="box" id="home_featured21">
             <div class="block"><h2>Registrar Protesis</h2>
-
-            			<h2>.</h2>
                 <form action="" method="post" class="registro"> 
-	                <div><label>Tipo:</label> 
-	                    <input type="text" name="tipo"></div> 
-                    <div><label>Material:</label> 
-                        <input type="text" name="material"></div>  
-                    <div><label>Tamaño:</label> 
-                        <input type="text" name="tamaño"></div> 
-                    <div><label>Precio:</label> 
-                        <input type="text" name="precio"></div>              
-                    <div><label>Nombre del Lugar Protesis:</label> 
-                        <input type="text" name="lugar"></div>      
-	               
+
+                    <table border="0px" id="tabla">
+                      <tr>
+                        <td><label>Tipo:</label> </td>
+                        <td><input type="text" name="tipo"></td>
+                      </tr>
+                       
+                      <tr>
+                        <td><label>Material:</label> </td>
+                        <td><input type="text" name="material"></td>
+                      </tr>
+
+                     <tr>
+                        <td><label>Tamaño:</label> </td>
+                        <td><input type="text" name="tamaño"></td>
+                      </tr>
+
+                      <tr>
+                        <td><label>Precio:</label> </td>
+                        <td><input type="text" name="precio"></td>
+                      </tr>
+
+                      <tr>
+                        <td><label>Nombre del Lugar Protesis:</label></td>
+                        <td><input type="text" name="lugar"></td>
+                      </tr>   
+                  </table>  
 	          		
 	          	 	<input type="submit" name="enviar" value="Registrar"></div>
 	            </form> 

@@ -26,32 +26,65 @@ require ("cabeza.ctp");
  <div class="main-container">
         <article class="box" id="home_featured21">
             <div class="block"><h2>Registrar Usuario</h2>
-                <h2>.</h2>
-             <form action="" method="post" class="registro"> 
-                <div><label>Nombre:</label> 
-                    <input type="text" name="usuario"></div> 
-                <div><label>Email:</label> 
-                    <input type="text" name="email"></div> 
-                <div><label>Ciudad:</label> 
-                    <input type="text" name="ciudad"></div> 
-                <div><label>Departamento:</label> 
-                    <input type="text" name="departamento"></div> 
-                <div><label>Nombre de Usuario:</label> 
-                    <input type="text" name="NomUsuario"></div> 
-                <div><label>Contraseña :</label> 
-                    <input type="text" name="contraseña"></div> 
-                <div><label>Repita Contraseña :</label> 
-                    <input type="text" name="repContraseña"></div> 
+             <form action="" method="post" id="regis" class="registro"> 
+               
 
-                     <label> Seleccione el tipo de usuario</label>
-                        <select name="opcion" id="numtexts" onchange="crear(this.value)">
+
+
+                    <table border="0px" id="tabla">
+                      <tr>
+                        <td><label>Nombre:</label> </td>
+                        <td><input type="text" name="usuario"></td>
+                      </tr>
+                       
+                      <tr>
+                        <td><label>Email:</label>  </td>
+                        <td><input type="text" name="email"></div> </td>
+                      </tr>
+
+                     <tr>
+                        <td><label>Ciudad:</label> </td>
+                        <td><input type="text" name="ciudad"></td>
+                      </tr>
+
+                      <tr>
+                        <td><label>Departamento:</label></td>
+                        <td><input type="text" name="departamento"></td>
+                      </tr>
+
+                      <tr>
+                        <td><label>Nombre de Usuario:</label> </td>
+                        <td><input type="text" name="NomUsuario"></td>
+                      </tr>
+
+                      <tr>
+                        <td><label>Contraseña :</label> </td>
+                        <td> <input type="password" name="contraseña"></td>
+                      </tr>
+
+                      <tr>
+                        <td><label>Repita Contraseña :</label></td>
+                        <td><input type="password" name="repContraseña"></div> </td>
+                      </tr>
+
+                      <tr>
+                        <td><label> Seleccione el tipo de usuario</label></td>
+                        <td><select name="opcion" id="numtexts" onchange="crear(this.value)">
                             <option value="0">Seleccionar</option>
                             <option value="1">Victima</option>
                             <option value="2">Medico</option>
                             <option value="3">Grupo de Apoyo</option>
                             <option value="4">Tienda de Protesis</option>
                             <option value="5">Empleador</option>
-                        </select>
+                        </select></td>
+                      </tr>
+
+
+                    </table>
+
+
+
+                     
                         <div id="contenedor"></div>
 
                 <input type="submit" name="enviar" value="Registrar"></div> 

@@ -8,12 +8,11 @@ require ("cabeza.ctp");
         <article class="box" id="home_featured21">
             <div class="block"><h2>Registrar Lugar Protesis</h2>
 
-            			<h2>.</h2>
                 <form action="" method="post" class="registro"> 
 	                <div><label>Nombre:</label> 
 	                    <input type="text" name="nombre"></div> 
 	                <div><label>Direccion:</label> 
-	                    <input type="text" name="direccion"></div> 
+	                    <input type="text" id="adress" name="direccion"></div> 
 	                <div><label>Telefono:</label> 
 	                    <input type="text" name="telefono"></div> 
 	          		

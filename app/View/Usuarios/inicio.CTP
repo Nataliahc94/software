@@ -28,13 +28,13 @@ require ("cabeza.ctp");
  <div class="main-container">
         <article class="box" id="home_featured21">
             <div class="block"><h2>Realizar Logeo</h2>
-              <h2>.</h2>
-             <form action="" method="post" class="registro"> 
-                <div><label>Nombre de Usuario:</label> 
-                    <input type="text" name="nomUsuario"></div> 
-                <div><label>Contraseña:</label> 
-                    <input type="text" name="contraseña"></div> 
-                <input type="submit" name="enviar" value="Ingresar"></div> 
+             
+               <form action="" method="post" class="registro"> 
+              <div><label>Nombre de Usuario:</label>
+                <input type="text" name="nomUsuario"></div>
+               <div><label>Contraseña:</label>
+                <input type="password" name="contraseña" id="con"></div> 
+               <input type="submit" name="enviar" value="Ingresar"></div> 
             </form> 
         </div>
      </article>  
