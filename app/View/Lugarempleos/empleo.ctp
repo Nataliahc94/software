@@ -7,13 +7,11 @@ require ("cabeza.ctp");
 <div class="main-container">
         <article class="box" id="home_featured21">
             <div class="block"><h2>Registrar Empleo</h2>
-
-            			<h2>.</h2>
                 <form action="" method="post" class="registro"> 
 	                <div><label>Titulo:</label> 
-	                    <input type="text" name="titulo"></div> 
+	                    <input type="text" id="ti"name="titulo"></div> 
                     <div><label>Nombre del Lugar Empleo:</label> 
-                        <input type="text" name="lugar"></div>     
+                        <input type="text" id="nomle"name="lugar"></div>     
 	                <div><label>Descripcion:</label> 
 	                   <p>
                             <textarea name="descripcion" id="comment" rows="3"></textarea>                            

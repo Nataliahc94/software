@@ -743,6 +743,16 @@ input[type=password] {
 #con{
         margin-left: 150px;
 }
+#ti{
+    margin-left: 245px;
+    width: 309px;
+}
+#nomle{
+    width: 309px;
+}
+#espe{
+    margin-left: 78px;
+}
 
 input[type=submit], input[type=reset] {
     background: #000;
