@@ -46,7 +46,7 @@
         <nav>
             <ul class="nav">
                 <li class="active"><a href="home">Home</a></li>
-                <li><a href="portfolio.html">Empleos</a>
+                <li><a href="../empleos/index">Empleos</a>
                     <ul>
                         <li><a href="#">Cucuta</a>
                             <ul>

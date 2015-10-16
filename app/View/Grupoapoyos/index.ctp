@@ -6,7 +6,7 @@ require ("cabeza.ctp");
     include_once "conexion.php"; ?>
 <div class="main-container">
         <article class="box" id="home_featured21">
-            <div class="block"><h2>Registrar un Grupo de Apoyo</h2>
+            <div class="block"><h2>Registrar un Grupo de Apoyo</h2> 
                 <form action="" method="post" class="registro"> 
 	                <div><label>Nombre:</label> 
 	                    <input type="text" name="nombre"></div> 

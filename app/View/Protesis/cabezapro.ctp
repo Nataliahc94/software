@@ -1,4 +1,4 @@
-   <title>APOYO a las vistimas de minas antipersonas | Home</title>
+     <title>APOYO a las vistimas de minas antipersonas | Home</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="styles/style.css" type="text/css"/>
     <link rel="stylesheet" href="styles/prettyphoto.css" type="text/css"/>
@@ -7,14 +7,31 @@
 
 <body>
         
+           <?php
+    session_start(); 
+    include_once "conexion.php"; 
+    $idvictima=$_SESSION["idvictima"];
+    ?>
+        
              <div id="nav-container">
                 <head>
-                    <a href="./index" >Registrar Lugar Protesis</a>
-                    <h6>  |   </h6>
-                    <a href="./protesis">Regsitar Protesis</a>
+                     <?php
+                        
+                        $idvictima=$_SESSION["idvictima"];
+                        $consultaid1 = "SELECT nombreUsuario FROM `uvictima` WHERE iduvictima='$idvictima'";                      
+                        $tipo1consultaid = mysql_query($consultaid1); 
+
+                     if(!$tipo1consultaid)
+                     {
+                        echo "No se pudo ejecutar la consulta";
+                     }
+                      $fila1id=mysql_fetch_row($tipo1consultaid);
+                        $nombreUsuario = $fila1id[0];
+                        echo $nombreUsuario;
+                        ?>  
+                        <a href="">Cerrar Sesion</a>        
                 </head>
             </div>
-         
 <div class="main-container">
     <header>
         <h1><a href="../pages/home">Apoyo a las victimas</a></h1>
@@ -46,7 +63,7 @@
         <nav>
             <ul class="nav">
                 <li class="active"><a href="home">Home</a></li>
-                <li><a href="../protesis/indexpr">Protesis</a>
+                <li><a href="../protesis/index">Protesis</a>
                     <ul>
                         <li><a href="#">Cucuta</a>
                             <ul>

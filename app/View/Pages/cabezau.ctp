@@ -6,13 +6,29 @@
 
 
 <body>
+    <?php
+    session_start(); 
+    include_once "conexion.php"; 
+    $idvictima=$_SESSION["idvictima"];
+    ?>
         
              <div id="nav-container">
                 <head>
-                    <a href="../Usuarios/index" >Registro   </a>
-                    <a>|</a>
-                    <a href="../Usuarios/inicio" >    Login</a>
-               
+                     <?php
+                        
+                        $idvictima=$_SESSION["idvictima"];
+                        $consultaid1 = "SELECT nombreUsuario FROM `uvictima` WHERE iduvictima='$idvictima'";                      
+                        $tipo1consultaid = mysql_query($consultaid1); 
+
+                     if(!$tipo1consultaid)
+                     {
+                        echo "No se pudo ejecutar la consulta";
+                     }
+                      $fila1id=mysql_fetch_row($tipo1consultaid);
+                        $nombreUsuario = $fila1id[0];
+                        echo $nombreUsuario;
+                        ?>  
+                        <a href="">Cerrar Sesion</a>        
                 </head>
             </div>
          
@@ -47,7 +63,7 @@
         <nav>
             <ul class="nav">
                 <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="../protesis/index">Protesis</a>
+                <li><a href="../protesis/indexpro">Protesis</a>
                      <ul>
                         <li><a href="#">Cucuta</a>
                             <ul>
@@ -244,6 +260,7 @@
                     </ul>
                 </li>
                 <li class="last"><a href="contact.php">Quienes Somos</a></li>
+                <li class="last"><a href="contact.php">Lista Favoritos</a></li>
             </ul>
         </nav>
         <div class="clear"></div>

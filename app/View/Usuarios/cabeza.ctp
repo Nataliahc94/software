@@ -8,6 +8,13 @@
 
 
 <body>
+             <div id="nav-container">
+                <head>
+                    <a href="./index" >Registro   </a>
+                    
+               
+                </head>
+            </div>
          
 <div class="main-container">
     <header>

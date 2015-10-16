@@ -75,7 +75,7 @@ body {
 a {
     outline: 0;
     text-decoration: none;
-    color: #a3443e
+    color: #4586ae;
 }
 /*Pone en la parte izquierda el buscador*/
 .primerbanner {
@@ -1150,9 +1150,8 @@ table {
 
 table thead th {
     color: #FFF;
-    background-color: #666;
-    border: 1px solid #CCC;
-    border-collapse: collapse;
+    background-color: rgba(171, 171, 171, 0.68);
+    border: 1px solid #000;
     text-align: center;
     table-layout: auto;
     vertical-align: middle

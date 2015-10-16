@@ -58,12 +58,31 @@ require ("cabeza.ctp");
                  {
                     echo "No se pudo ejecutar la consulta";
                  }
-                $fila=mysql_fetch_row($tipoconsulta);
+                $fila1=mysql_fetch_row($tipoconsulta);
                  
-                 if($fila[0]==1)
+                 if($fila1[0]==1)
                  {
-                    echo "El usuario es Victima";// acá se hace el enlace para que pueda ingresar a los privilegios que tiene como usuario
-                     echo $fila[0];
+                    $consultaid1 = "SELECT iduvictima FROM uvictima WHERE nombreUsuario= '$nomUsuario'";                      
+                     $tipo1consultaid = mysql_query($consultaid1); 
+
+                     if(!$tipo1consultaid)
+                     {
+                        echo "No se pudo ejecutar la consulta";
+                     }
+                      $fila1id=mysql_fetch_row($tipo1consultaid);
+
+                      
+                      global $idvictima;
+                     $idvictima = $fila1id[0];
+                      echo $idvictima;
+                      session_start(); 
+
+                     $_SESSION["idvictima"] = $fila1id[0];
+                      echo "<script language='JavaScript'>";                    
+                      echo "location = '../pages/usuario'"; 
+                      echo "</script>"; 
+
+                      echo "El usuario es Victima";// acá se hace el enlace para que pueda ingresar a los privilegios que tiene como usuario
 
                  }
                  ///////////////////////////////////

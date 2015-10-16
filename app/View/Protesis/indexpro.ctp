@@ -1,5 +1,5 @@
 <?php
-require ("cabezapr.ctp");
+require ("cabezapro.ctp");
 
 
 include_once "conexion.php"; 
@@ -17,6 +17,7 @@ include_once "conexion.php";
 						<th><?php echo $this->Paginator->sort('tamaño'); ?></th>
 						<th><?php echo $this->Paginator->sort('precio'); ?></th>
 						<th><?php echo $this->Paginator->sort('Nombre del lugar'); ?></th>
+						<th><?php echo $this->Paginator->sort('Favorito'); ?></th>
 						
 				</tr>
 				</thead>
@@ -45,7 +46,7 @@ include_once "conexion.php";
 			                      echo $lugar;
 
 							?>&nbsp;</td>
-					
+					<td><?php echo h($protesi['Protesi']['listaFavoritos_idlistaFavoritos']); ?>&nbsp;</td>
 				</tr>
 			<?php endforeach; ?>
 				</tbody>

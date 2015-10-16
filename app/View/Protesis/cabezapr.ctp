@@ -1,4 +1,4 @@
-   <title>APOYO a las vistimas de minas antipersonas | Home</title>
+     <title>APOYO a las vistimas de minas antipersonas | Home</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="styles/style.css" type="text/css"/>
     <link rel="stylesheet" href="styles/prettyphoto.css" type="text/css"/>
@@ -9,9 +9,9 @@
         
              <div id="nav-container">
                 <head>
-                    <a href="./index" >Registrar Lugar Protesis</a>
+                    <a href="../lugarprotesis/index" >Registrar Lugar Protesis</a>
                     <h6>  |   </h6>
-                    <a href="./protesis">Regsitar Protesis</a>
+                    <a href="../lugarprotesis/protesis">Regsitar Protesis</a>
                 </head>
             </div>
          
@@ -46,7 +46,7 @@
         <nav>
             <ul class="nav">
                 <li class="active"><a href="home">Home</a></li>
-                <li><a href="../protesis/indexpr">Protesis</a>
+                <li><a href="../protesis/index">Protesis</a>
                     <ul>
                         <li><a href="#">Cucuta</a>
                             <ul>

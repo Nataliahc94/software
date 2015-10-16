@@ -101,4 +101,12 @@ class ProtesisController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+	public function indexpro() {
+		$this->Protesi->recursive = 0;
+		$this->set('protesis', $this->Paginator->paginate());
+	}
+	public function indexpr() {
+		$this->Protesi->recursive = 0;
+		$this->set('protesis', $this->Paginator->paginate());
+	}
 }

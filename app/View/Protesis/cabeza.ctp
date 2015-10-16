@@ -6,26 +6,20 @@
 
 
 <body>
-        <?php
-        session_start(); 
-        $idtprotesis=$_SESSION["idtprotesis"];
-        echo $idtprotesis;
-        
-        ?>
-             <div id="nav-container">
-                <head>
-                    <a href="../Usuarios/index" >Registro</a>
-                    <a href="../Usuarios/inicio" >Login</a>
-                   
+     <div id="nav-container">
+        <head>
+            <a href="../Usuarios/index" >Registro</a>
+            <a href="../Usuarios/inicio" >Login</a>
+           
 
-                   <?php echo $this->Html->link(
-                    $this->Html->image('us.png', array('alt' => $cakeDescription, 'border' => '0')),
-                    'http://www.cakephp.org/',
-                    array('target' => '_blank', 'escape' => false, 'id' => 'cake-powered')
-                );
-            ?>
-                </head>
-            </div>
+           <?php echo $this->Html->link(
+            $this->Html->image('us.png', array('alt' => $cakeDescription, 'border' => '0')),
+            'http://www.cakephp.org/',
+            array('target' => '_blank', 'escape' => false, 'id' => 'cake-powered')
+        );
+    ?>
+        </head>
+    </div>
          
 <div class="main-container">
     <header>
@@ -58,7 +52,7 @@
         <nav>
             <ul class="nav">
                 <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="../protesis/index">Protesis</a>
+                <li><a href="index">Protesis</a>
                      <ul>
                         <li><a href="#">Cucuta</a>
                             <ul>
