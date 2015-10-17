@@ -10,7 +10,10 @@
              <div id="nav-container">
                 <head>
                     <a href="./index" >Registrar Lugar Empleo</a>
+                    <a href="">|</a>
                     <a href="./empleo" >Registrar Empleo</a>
+                    <a href="">|</a>
+                    <a href="../pages/home">CERRAR SESIÓN</a>
 
                 </head>
             </div>

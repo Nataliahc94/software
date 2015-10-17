@@ -10,8 +10,10 @@
              <div id="nav-container">
                 <head>
                     <a href="../lugarprotesis/index" >Registrar Lugar Protesis</a>
-                    <h6>  |   </h6>
+                    <a href="">|</a>
                     <a href="../lugarprotesis/protesis">Regsitar Protesis</a>
+                    <a href="">|</a>
+                    <a href="../pages/home">CERRAR SESIÓN</a>
                 </head>
             </div>
          

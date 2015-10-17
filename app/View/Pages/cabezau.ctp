@@ -28,7 +28,7 @@
                         $nombreUsuario = $fila1id[0];
                         echo $nombreUsuario;
                         ?>  
-                        <a href="">Cerrar Sesion</a>        
+                        <a href="./home">CERRAR SESIÓN</a>        
                 </head>
             </div>
          

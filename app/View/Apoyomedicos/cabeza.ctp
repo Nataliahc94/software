@@ -10,6 +10,8 @@
              <div id="nav-container">
                 <head>
                     <a href="./index" >Registrar Apoyo Medico</a>
+                    <a href="">|</a>
+                    <a href="../pages/home">CERRAR SESIÓN</a>
                 </head>
             </div>
          
