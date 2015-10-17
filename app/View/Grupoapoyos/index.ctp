@@ -43,11 +43,11 @@ require ("cabeza.ctp");
 
                  if(!$consulta)
                  {
-                    echo "No se pudo ejecutar la consulta ";
+                    echo "No se pudo realizar la operación ";
                  }
                  else
                  {
-                 	echo "el registro de grupo de Apoyo fue exitoso";
+                 	echo "se ha registrado exitosamente el grupo de apoyo";
                  }
 
 		    	
