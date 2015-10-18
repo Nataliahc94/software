@@ -6,9 +6,29 @@
 
 
 <body>
+    <?php
+    session_start(); 
+    include_once "conexion.php"; 
+    $idgrupoapoyo=$_SESSION["idvariable"];
+    ?>
         
              <div id="nav-container">
                 <head>
+                    <?php
+                        
+                       
+                        $consultaid1 = "SELECT nombreUsuario FROM `ugrupoapoyo` WHERE idugrupoApoyo ='$idgrupoapoyo'";                      
+                        $tipo1consultaid = mysql_query($consultaid1); 
+
+                     if(!$tipo1consultaid)
+                     {
+                        echo "No se pudo ejecutar la consulta";
+                     }
+                      $fila1id=mysql_fetch_row($tipo1consultaid);
+                        $nombreUsuario = $fila1id[0];
+                        echo $nombreUsuario;
+                    ?> 
+                    <a href="">|</a> 
                     <a href="./index" >Registrar Grupo Apoyo</a>
                     <a href="">|</a>
                     <a href="../pages/home">CERRAR SESIÓN</a>

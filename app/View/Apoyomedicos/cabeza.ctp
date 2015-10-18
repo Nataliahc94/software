@@ -6,9 +6,29 @@
 
 
 <body>
+    <?php
+    session_start(); 
+    include_once "conexion.php"; 
+    $idvictima=$_SESSION["idmedico"];
+    ?>
         
              <div id="nav-container">
                 <head>
+                    <?php
+                        
+                        $idmedico=$_SESSION["idmedico"];
+                        $consultaid1 = "SELECT nombreUsuario FROM `umedico` WHERE idumedico ='$idmedico'";                      
+                        $tipo1consultaid = mysql_query($consultaid1); 
+
+                     if(!$tipo1consultaid)
+                     {
+                        echo "No se pudo ejecutar la consulta";
+                     }
+                      $fila1id=mysql_fetch_row($tipo1consultaid);
+                        $nombreUsuario = $fila1id[0];
+                        echo $nombreUsuario;
+                        ?> 
+                    <a href="">|</a> 
                     <a href="./index" >Registrar Apoyo Medico</a>
                     <a href="">|</a>
                     <a href="../pages/home">CERRAR SESIÓN</a>
@@ -46,7 +66,7 @@
         <nav>
             <ul class="nav">
                 <li class="active"><a href="home">Home</a></li>
-                <li><a href="portfolio.html">Apoyo Medico/a>
+                <li><a href="portfolio.html">Apoyo Medico </a>
                     <ul>
                         <li><a href="#">Cucuta</a>
                             <ul>

@@ -27,7 +27,8 @@
                       $fila1id=mysql_fetch_row($tipo1consultaid);
                         $nombreUsuario = $fila1id[0];
                         echo $nombreUsuario;
-                        ?>  
+                        ?> 
+                        <a href="">|</a> 
                         <a href="./home">CERRAR SESIÓN</a>        
                 </head>
             </div>

@@ -6,9 +6,30 @@
 
 
 <body>
+    <?php
+    session_start(); 
+    include_once "conexion.php"; 
+    $idvictima=$_SESSION["idtprotesis"];
+    ?>
         
              <div id="nav-container">
                 <head>
+                     <?php
+                        
+                        $idtprotesis=$_SESSION["idtprotesis"];
+                        $consultaid1 = "SELECT nombreUsuario FROM `utiendaprotesis` WHERE idutiendaProtesis ='$idtprotesis'";      
+
+                        $tipo1consultaid = mysql_query($consultaid1); 
+
+                     if(!$tipo1consultaid)
+                     {
+                        echo "No se pudo ejecutar la consulta";
+                     }
+                      $fila1id=mysql_fetch_row($tipo1consultaid);
+                        $nombreUsuario = $fila1id[0];
+                        echo $nombreUsuario;
+                        ?> 
+                        <a href="">|</a> 
                     <a href="./index" >Registrar Lugar Protesis</a>
                     <a href="">|</a>
                     <a href="./protesis">Regsitar Protesis</a>

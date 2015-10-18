@@ -6,9 +6,27 @@
 
 
 <body>
+    <?php
+    session_start(); 
+    include_once "conexion.php"; 
+    $idempleador=$_SESSION["idempleador"];
+    ?>
         
              <div id="nav-container">
                 <head>
+                    <?php
+                        $consultaid1 = "SELECT nombreUsuario FROM `uempleador` WHERE iduempleador ='$idempleador'";                      
+                        $tipo1consultaid = mysql_query($consultaid1); 
+
+                     if(!$tipo1consultaid)
+                     {
+                        echo "No se pudo ejecutar la consulta";
+                     }
+                      $fila1id=mysql_fetch_row($tipo1consultaid);
+                        $nombreUsuario = $fila1id[0];
+                        echo $nombreUsuario;
+                        ?> 
+                    <a href="">|</a> 
                     <a href="./index" >Registrar Lugar Empleo</a>
                     <a href="">|</a>
                     <a href="./empleo" >Registrar Empleo</a>
