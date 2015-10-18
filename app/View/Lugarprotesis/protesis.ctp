@@ -6,7 +6,7 @@ require ("cabeza.ctp");
     include_once "conexion.php"; ?>
 <div class="main-container">
         <article class="box" id="home_featured21">
-            <div class="block"><h2>Registrar Protesis</h2>
+            <div class="block"><h2>Registrar la protesis</h2>
                 <form action="" method="post" class="registro"> 
 
                     <table border="0px" id="tabla">
@@ -31,7 +31,7 @@ require ("cabeza.ctp");
                       </tr>
 
                       <tr>
-                        <td><label>Nombre del Lugar Protesis:</label></td>
+                        <td><label>Nombre del lugar de la protesis:</label></td>
                         <td><input type="text" name="lugar"></td>
                       </tr>   
                   </table>  

@@ -26,6 +26,12 @@ class UvictimaTest extends CakeTestCase {
 		$this->Uvictima = ClassRegistry::init('Uvictima');
 	}
 
+	public  function getUvictimasTest(){
+		$result = $this->Uvictima->
+	}
+
+
+
 /**
  * tearDown method
  *
