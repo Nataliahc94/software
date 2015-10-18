@@ -12,10 +12,10 @@ include_once "conexion.php";
 				<thead>
 				<tr>
 						
-						<th><?php echo $this->Paginator->sort('tipo');  ?></th>
-						<th><?php echo $this->Paginator->sort('material'); ?></th>
-						<th><?php echo $this->Paginator->sort('tamaño'); ?></th>
-						<th><?php echo $this->Paginator->sort('precio'); ?></th>
+						<th><?php echo $this->Paginator->sort('Tipo');  ?></th>
+						<th><?php echo $this->Paginator->sort('Material'); ?></th>
+						<th><?php echo $this->Paginator->sort('Tamaño'); ?></th>
+						<th><?php echo $this->Paginator->sort('Precio'); ?></th>
 						<th><?php echo $this->Paginator->sort('Nombre del lugar'); ?></th>
 						<th><?php echo $this->Paginator->sort('Favorito'); ?></th>
 						
