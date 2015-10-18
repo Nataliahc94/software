@@ -9,25 +9,30 @@ require ("cabeza.ctp");
     
                 <article class="footbox">
             <div class="block">
-                
-                <h2>Mision</h2>
 
-                <p>Ayudar a mejorar la calidad de vida de las personas que han tenido que sufrir el hecho de ser víctimas de minas antipersonales. <br/>
+                <h2>Misión</h2>
+
+                <p>
+                    Ayudar a mejorar la calidad de vida de las personas que han tenido que sufrir el hecho de ser víctimas de minas antipersonales. <br/>
+
+
                     
                 </p>
             </div>
              <div class="block">
 
-                <h2>Vision</h2>
+                <h2>Visión</h2>
 
                 <p>En el 2016 ser un aplicativo web con el mayor apoyo y respaldo a los colombianos víctimas de minas antipersonales, convirtiéndonos para todos ellos en la ayuda para buscar una mejor calidad de vida.
 <br/>
                     
                 </p>
+
+
             </div>     
              <div class="block">
 
-                <h2>Quienes somos</h2>
+                <h2>Quiénes somos</h2>
 
                 <p> 
                     Somos un grupo de personas que se han dedicado a realizar un aplicativo web para brindar un servicio a las personas que han sufrido la tragedia de ser victimas de minas antipersonales. Como fortalecimiento en la parte de la salud, aocial y laboral para una mejor calidad de vida. <br/>
