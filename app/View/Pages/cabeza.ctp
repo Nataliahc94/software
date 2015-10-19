@@ -1,4 +1,4 @@
-   <title>APOYO a las vistimas de minas antipersonas | Home</title>
+   <title>APOYO a las victimas de minas antipersonas | Home</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="styles/style.css" type="text/css"/>
     <link rel="stylesheet" href="styles/prettyphoto.css" type="text/css"/>
