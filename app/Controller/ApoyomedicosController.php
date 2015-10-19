@@ -104,4 +104,7 @@ class ApoyomedicosController extends AppController {
 	public function inicio() {
 
 	}
+	public function apoyomedico() {
+
+	} 
 }

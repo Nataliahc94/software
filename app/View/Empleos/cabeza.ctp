@@ -10,15 +10,9 @@
              <div id="nav-container">
                 <head>
                     <a href="../Usuarios/index" >Registro</a>
+                    <a href="">|</a>
                     <a href="../Usuarios/inicio" >Login</a>
                    
-
-                   <?php echo $this->Html->link(
-                    $this->Html->image('us.png', array('alt' => $cakeDescription, 'border' => '0')),
-                    'http://www.cakephp.org/',
-                    array('target' => '_blank', 'escape' => false, 'id' => 'cake-powered')
-                );
-            ?>
                 </head>
             </div>
          

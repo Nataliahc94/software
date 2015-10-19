@@ -243,7 +243,7 @@
                             </ul>                    
                     </ul>
                 </li>
-                <li class="last"><a href="contact.php">Quienes Somos</a></li>
+                <li class="last"><a href="./quineness">Quienes Somos</a></li>
             </ul>
         </nav>
         <div class="clear"></div>
