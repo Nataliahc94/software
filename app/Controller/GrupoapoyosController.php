@@ -24,6 +24,11 @@ class GrupoapoyosController extends AppController {
 		$this->Grupoapoyo->recursive = 0;
 		$this->set('grupoapoyos', $this->Paginator->paginate());
 	}
+	public function indexh() {
+		$this->Grupoapoyo->recursive = 0;
+		$this->set('grupoapoyos', $this->Paginator->paginate());
+
+	}
 
 /**
  * view method

@@ -96,7 +96,7 @@
                             </ul>                    
                     </ul>
                 </li>
-                <li><a href="#">Apoyo Medico</a>
+                <li><a href="../apoyomedicos/apoyomedico">Apoyo Medico</a>
                     <ul>
                         <li><a href="#">Cucuta</a>
                             <ul>
@@ -145,7 +145,7 @@
                             </ul>                    
                     </ul>
                 </li>
-                <li><a href="portfolio.html">Apoyo Psicologico</a>
+                <li><a href="../grupoapoyos/indexh">Apoyo Psicologico</a>
                      <ul>
                         <li><a href="#">Cucuta</a>
                             <ul>
