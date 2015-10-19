@@ -25,6 +25,8 @@ class ApoyomedicosController extends AppController {
 		$this->set('apoyomedicos', $this->Paginator->paginate());
 	}
 
+
+
 /**
  * view method
  *
@@ -106,5 +108,7 @@ class ApoyomedicosController extends AppController {
 	}
 	public function apoyomedico() {
 
+		$this->Apoyomedico->recursive = 0;
+		$this->set('apoyomedicos', $this->Paginator->paginate());
 	} 
 }

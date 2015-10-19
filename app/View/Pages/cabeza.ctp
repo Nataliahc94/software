@@ -96,7 +96,7 @@
                             </ul>                    
                     </ul>
                 </li>
-                <li><a href="#">Apoyo Medico</a>
+                <li><a href="../apoyomedicos/apoyomedico">Apoyo Medico</a>
                     <ul>
                         <li><a href="#">Cucuta</a>
                             <ul>
