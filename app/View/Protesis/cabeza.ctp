@@ -54,7 +54,7 @@
                 <li class="active"><a href="index.html">Home</a></li>
                 <li><a href="index">Protesis</a>
                      <ul>
-                        <li><a href="#">Cucuta</a>
+                        <li><a href="#">Cauca</a>
                             <ul>
                                 <li><a href="direccion">Popayan</a>
                                 </li>
