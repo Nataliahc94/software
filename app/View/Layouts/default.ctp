@@ -28,10 +28,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css('style');
-		echo $this->Html->css('icons');
-		echo $this->Html->css('prettyphoto');
-		echo $this->Html->css('totop');
+		echo $this->Html->css('base');
+		echo $this->Html->css('fonts');
+		echo $this->Html->css('vendor');
+		echo $this->Html->css('main');
+		echo $this->Html->css('vendor.min');
 
 		echo $this->Html->script('easing');
 		echo $this->Html->script('functions');

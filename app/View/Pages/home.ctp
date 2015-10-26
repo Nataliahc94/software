@@ -3,43 +3,39 @@ require ("cabeza.ctp");
 ?>
 
 
-<div class="callout">
-    <div class="calloutcontainer">
-        <div class="container_12">
-    
-                <article class="footbox">
-            <div class="block">
 
-                <h2>Misión</h2>
+ <section id="portfolio">
 
-                <p>
-                    Ayudar a mejorar la calidad de vida de las personas que han tenido que sufrir el hecho de ser víctimas de minas antipersonales. <br/>
+      <div class="row section-head">
 
+        <div class="twelve columns">
 
-                    
-                </p>
-            </div>
-             <div class="block">
+          <h1>Mision<span>.</span></h1>
 
-                <h2>Visión</h2>
+           <hr />               
 
-                <p>En el 2016 ser un aplicativo web con el mayor apoyo y respaldo a los colombianos víctimas de minas antipersonales, convirtiéndonos para todos ellos en la ayuda para buscar una mejor calidad de vida.
-<br/>
-                    
-                </p>
+           <p>Ayudar a mejorar la calidad de vida de las personas que han tenido que sufrir el hecho de ser víctimas de minas antipersonales.
+           </p>
 
+        </div>
 
-            </div>    
-           
-        </article>
+      </div>
+       <div class="row section-head">
 
+        <div class="twelve columns">
 
+          <h1>Vision<span>.</span></h1>
 
-    </div>
+           <hr />               
 
-    </div>
+           <p>En el 2016 ser un aplicativo web con el mayor apoyo y respaldo a los colombianos víctimas de minas antipersonales, convirtiéndonos para todos ellos en la ayuda para buscar una mejor calidad de vida.
+           </p>
 
-    </div>
+        </div>
+
+      </div>
+     </section> 
+
 
 
 

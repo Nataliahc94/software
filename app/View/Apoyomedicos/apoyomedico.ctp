@@ -5,9 +5,13 @@ require ("cabezah.ctp");
 include_once "conexion.php"; 
 ?>
 
- <div class="main-container">
- 	 <article class="box" id="home_featured21">
-            <div class="block"><h2><?php echo __('Apoyomedicos'); ?></h2>				
+ <section id="contact">
+
+    <div class="row section-head">
+
+      <div class="twelve columns">
+
+      		<h2><?php echo __('Apoyo medico'); ?></h2>				
 				<table cellpadding="0" cellspacing="0">
 				<thead>
 				<tr>

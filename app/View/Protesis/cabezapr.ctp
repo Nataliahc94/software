@@ -1,21 +1,35 @@
-     <title>APOYO a las vistimas de minas antipersonas | Home</title>
+     <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
     <meta charset="utf-8"/>
-    <link rel="stylesheet" href="styles/style.css" type="text/css"/>
-    <link rel="stylesheet" href="styles/prettyphoto.css" type="text/css"/>
-    <link rel="stylesheet" href="styles/totop.css" type="text/css"/>
+   
+       <link rel="stylesheet" href="css/base.css">
+   <link rel="stylesheet" href="css/vendor.min.css">
+   <link rel="stylesheet" href="css/main.css">  
+    <script src="js/modernizr.js"></script>
+    <link rel="shortcut icon" href="favicon.png" >
 
 
 <body>
+  
+
+    <div class="row">
+
+          <nav id="nav-wrap">         
+             
+             <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+                <span class="menu-icon">Menu</span>
+             </a>
+            <a class="mobile-btn" href="#" title="Hide navigation">
+                <span class="menu-icon">Menu</span>
+            </a>
     <?php
     session_start(); 
     include_once "conexion.php"; 
     $idvictima=$_SESSION["idtprotesis"];
     ?>
-
-        
-             <div id="nav-container">
-                <head>
-                    <?php
+         <ul id="nav" class="nav" >
+            <?php
                         
                         $idtprotesis=$_SESSION["idtprotesis"];
                         $consultaid1 = "SELECT nombreUsuario FROM `utiendaprotesis` WHERE idutiendaProtesis ='$idtprotesis'";      
@@ -29,99 +43,64 @@
                       $fila1id=mysql_fetch_row($tipo1consultaid);
                         $nombreUsuario = $fila1id[0];
                         echo $nombreUsuario;
-                        ?>  
-                    <a href="../lugarprotesis/index" >Registrar Lugar Protesis</a>
-                    <a href="">|</a>
-                    <a href="../lugarprotesis/protesis">Regsitar Protesis</a>
-                    <a href="">|</a>
-                    <a href="../pages/home">CERRAR SESIÓN</a>
-                </head>
-            </div>
+                        ?> 
+                <li><a class="smoothscroll" href="../lugarprotesis/index">Registrar Lugar Protesis.</a></li>
+                 <li ><a class="smoothscroll" href="../lugarprotesis/protesis">Regsitar Protesis.</a>
+                  <li><a class="smoothscroll" href="../pages/home">CERRAR SESIÓN.</a></li>   
+                        
+                 </li>
+               
+             </ul> <!-- end #nav -->
+
+          </nav> <!-- end #nav-wrap -->
+
+             
+
+       </div>
+
+  <section id="hero"> 
+      
+ 
+    <!-- insertar una imagen-->
+
+   </section> <!-- end homepage hero -->
          
-<div class="main-container">
-    <header>
-        <h1><a href="../pages/home">Apoyo a las victimas</a></h1>
+<header id="main-header">
+    <div class="row">
 
-        <p id="tagline"><strong>del conflicto armado</strong></p>
-    </header>
-</div>
+          <div class="logo">
+             <a href="../pages/home"></a>
+          </div>
 
-<div class="main-container">
-    <div id="sub-headline">
-        <div class="tagline_left"><p id="tagline2">Tel: 314 893 4781 | Mail: <a >apoyoavictimasdeminas@gmail.com</a>
-        </p></div>
-        <div class="tagline_right">
-            <form action="#" method="post">
-                <fieldset>
-                    <legend>Site Search</legend>
-                    <input type="text" value="Search Our Website&hellip;"
-                           onfocus="if (this.value == 'Search Our Website&hellip;') {this.value = '';}"
-                           onblur="if (this.value == '') {this.value = 'Search Our Website&hellip;';}"/>
-                    <input type="submit" name="go" id="go" value="Search"/>
-                </fieldset>
-            </form>
-        </div>
-        <br class="clear"/>
-    </div>
-</div>
-<div class="main-container">
-    <div id="nav-container">
-        <nav>
-            <ul class="nav">
-                <li class="active"><a href="home">Home</a></li>
-                <li><a href="../protesis/index">Protesis</a>
-                    <ul>
-                        <li><a href="#">Cauca</a>
-                            <ul>
-                                <li><a href="direccion">Popayan</a>
-                                </li>
-                            </ul>
-                        <li><a href="direccon">Antioquia</a>
-                            <ul>
-                                <li><a href="direccion">Medellin</a>
-                                </li>
-                            </ul>
-                        <li><a href="direccon">Valle</a>
-                            <ul>
-                                <li><a href="direccion">Cali</a>
-                                </li>
-                            </ul>    
-                        <li><a href="direccon">Caqueta</a>
-                            <ul>
-                                <li><a href="direccion">Florencia</a>
-                                </li>
-                            </ul>
-                        <li><a href="direccon">Nariño</a>
-                            <ul>
-                                <li><a href="direccion">Pasto</a>
-                                </li>
-                            </ul>
-                        <li><a href="direccon">N. de Santander</a>
-                            <ul>
-                                <li><a href="direccion">Cucuta</a>
-                                </li>
-                            </ul> 
-                        <li><a href="direccon">Huila</a>
-                            <ul>
-                                <li><a href="direccion">Neiva</a>
-                                </li>
-                            </ul> 
-                        <li><a href="direccon">Arauca</a>
-                            <ul>
-                                <li><a href="direccion">Arauca</a>
-                                </li>
-                            </ul> 
-                        <li><a href="direccon">Putumayo</a>
-                            <ul>
-                                <li><a href="direccion">Mocoa</a>
-                                </li>
-                            </ul>                    
-                    </ul>
-                </li>
-                <li class="last"><a href="contact.php">Quienes Somos</a></li>
-            </ul>
-        </nav>
-        <div class="clear"></div>
-    </div>
-</div>
-</body>
+          <nav id="nav-wrap">         
+             
+             <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+                <span class="menu-icon">Menu</span>
+             </a>
+            <a class="mobile-btn" href="#" title="Hide navigation">
+                <span class="menu-icon">Menu</span>
+            </a>            
+
+             <ul id="nav" class="nav">
+                <li class="current"><a class="smoothscroll" href="../lugarprotesis/protesis">Home</a></li>
+                 <li ><a class="smoothscroll" href="../protesis/indexpr">Protesis.</a>                   
+                 </li>
+                <li><a class="smoothscroll" href="./quineness">Quienes Somos.</a></li>
+             </ul> <!-- end #nav -->
+
+          </nav> <!-- end #nav-wrap -->
+
+          <ul class="header-social">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+          </ul>      
+
+       </div>
+
+  </header> <!-- end header --> 
+
+
+        
+
+</body>                   

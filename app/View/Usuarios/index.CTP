@@ -1,97 +1,90 @@
 <?php
-require ("cabeza.ctp");
+require ("cabezar.ctp");
 ?>
-        <div class="main-container">
-            <div class="container1">
-                <div id="breadcrumb">
-                    <ul>
-                        <li class="first">Esta aquí</li>
-                        <li>&#187;</li>
-                        <li><a href="../pages/home">Home</a></li>
-                       
-                        
-                        <li>&#187;</li>
-                        <li class="current"><a href="index">Registro</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div> 
-
-
-
     <?php 
     session_start();//crea una sesión para ser usada mediante una petición GET o POST, o pasado por una cookie y la sentencia include_once es la usaremos para incluir el archivo de conexión a la base de datos que creamos anteriormente.
     include_once "conexion.php"; ?>
 
- <div class="main-container">
-        <article class="box" id="home_featured21">
-            <div class="block"><h2>Registrar Usuario</h2>
-             <form action="" method="post" id="regis" class="registro"> 
-               
+  <!-- Registrar usuario
+   ================================================== -->
+  <section id="portfolio">
+
+      <div class="row section-head">
 
 
 
-                    <table border="0px" id="tabla">
-                      <tr>
-                        <td><label>Nombre:</label> </td>
-                        <td><input type="text" name="usuario"></td>
-                      </tr>
-                       
-                      <tr>
-                        <td><label>Email:</label>  </td>
-                        <td><input type="text" name="email"></div> </td>
-                      </tr>
 
-                     <tr>
-                        <td><label>Ciudad:</label> </td>
-                        <td><input type="text" name="ciudad"></td>
-                      </tr>
+      <div class="twelve columns">
 
-                      <tr>
-                        <td><label>Departamento:</label></td>
-                        <td><input type="text" name="departamento"></td>
-                      </tr>
+          <h2>Registrar Usuario<span>.</span></h2>
 
-                      <tr>
-                        <td><label>Nombre de Usuario:</label> </td>
-                        <td><input type="text" name="NomUsuario"></td>
-                      </tr>
+            <hr />  
 
-                      <tr>
-                        <td><label>Contraseña :</label> </td>
-                        <td> <input type="password" name="contraseña"></td>
-                      </tr>
+          </div>
+       
+       </div> <!-- end section-head -->
 
-                      <tr>
-                        <td><label>Repita Contraseña :</label></td>
-                        <td><input type="password" name="repContraseña"></div> </td>
-                      </tr>
+        <div class="row" id="po">
+         
+         <div id="contact-form" class="six columns tab-whole left">
 
-                      <tr>
-                        <td><label> Seleccione el tipo de usuario</label></td>
-                        <td><select name="opcion" id="numtexts" onchange="crear(this.value)">
+            <!-- <form action="" method="post" id="regis" class="registro"> -->
+              <!-- form -->
+            <form name="contactForm" id="contactForm" method="post" action=""  >   
+              <fieldset>
+
+                <div class="group">
+                  <input name="usuario" type="text" id="contactName" placeholder="Nombre" value="" minLength="2" required />
+                  </div>
+                   <div>
+                   <input name="email" type="email" id="contactEmail" placeholder="Email" value="" required />
+                   </div>
+                   <div>
+                   <input name="ciudad" type="text" id="contactSubject" placeholder="Ciudad"  value="" />
+                   </div> 
+                   <div>
+                   <input name="departamento" type="text" id="contactSubject" placeholder="Departamento"  value="" />
+                   </div>  
+                  <div>
+                   <input name="NomUsuario" type="text" id="contactSubject" placeholder="Nombre de Usuario"  value="" />
+                   </div>  
+                  <div>
+                   <input name="contraseña" type="password" id="contactSubject" placeholder="Contraseña"  value="" />
+                   </div> 
+                   <div>
+                   <input name="repContraseña" type="password" id="contactSubject" placeholder="Repita Contraseña"  value="" />
+                   </div> 
+
+                     <div>
+                 <select name="opcion" id="numtexts" placeholder="Seleccione un tipo de usuario" onchange="crear(this.value)">
                             <option value="0">Seleccionar</option>
                             <option value="1">Victima</option>
                             <option value="2">Medico</option>
                             <option value="3">Grupo de Apoyo</option>
                             <option value="4">Tienda de Protesis</option>
                             <option value="5">Empleador</option>
-                        </select></td>
-                      </tr>
+                        </select>
+                 </div>  
 
 
-                    </table>
-
-
-
+                  <div>
+                     <button class="submitform" name="enviar">Registrar</button>
+                     <div id="submit-loader">
+                        <div class="text-loader">Sending...</div>                             
+                    <div class="s-loader">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+              </div>
+                  </div>
+                      
                      
-                        <div id="contenedor"></div>
-
-                <input type="submit" name="enviar" value="Registrar"></div> 
-            </form> 
-        </div>
-     </article> 
-  </div>       
+                      
+                     
+               </fieldset>
+          </form> <!-- Form End -->
+                     
 
 
 <?php

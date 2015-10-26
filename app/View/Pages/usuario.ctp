@@ -3,38 +3,37 @@ require ("cabezau.ctp");
 ?>
 
 
-<div class="callout">
-    <div class="calloutcontainer">
-        <div class="container_12">
-    
-                <article class="footbox">
-            <div class="block">
-                <h2>Mision</h2>
+ <section id="portfolio">
 
-                <p>Ayudar a mejorar la calidad de vida de las personas que han tenido que sufrir el hecho de ser víctimas de minas antipersonales.<br/>
-                    
-                </p>
-            </div>
-             <div class="block">
-                <h2>Vision</h2>
+      <div class="row section-head">
 
-                <p>En el 2016 ser un aplicativo web con el mayor apoyo y respaldo a los colombianos víctimas de minas antipersonales, convirtiéndonos para todos ellos en la ayuda para buscar una mejor calidad de vida.<br/>
-                    
-                </p>
-            </div>     
-           
+        <div class="twelve columns">
 
-           
-        </article>
+          <h1>Mision<span>.</span></h1>
 
+           <hr />               
 
+           <p>Ayudar a mejorar la calidad de vida de las personas que han tenido que sufrir el hecho de ser víctimas de minas antipersonales.
+           </p>
 
-    </div>
+        </div>
 
-    </div>
+      </div>
+       <div class="row section-head">
 
-    </div>
+        <div class="twelve columns">
 
+          <h1>Vision<span>.</span></h1>
+
+           <hr />               
+
+           <p>En el 2016 ser un aplicativo web con el mayor apoyo y respaldo a los colombianos víctimas de minas antipersonales, convirtiéndonos para todos ellos en la ayuda para buscar una mejor calidad de vida.
+           </p>
+
+        </div>
+
+      </div>
+     </section> 
 
 
 

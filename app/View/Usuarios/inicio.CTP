@@ -1,44 +1,58 @@
 <?php
-require ("cabeza.ctp");
+require ("cabezal.ctp");
 ?>
-  <div class="main-container">
-            <div class="container1">
-                <div id="breadcrumb">
-                    <ul>
-                        <li class="first">Esta aquí</li>
-                        <li>&#187;</li>
-                        <li><a href="../pages/home">Home</a></li>
-                       
-                        
-                        <li>&#187;</li>
-                        <li class="current"><a href="inicio">Login</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div> 
 
-    </body>
-</html>
-<div class="main-container">
     
  <?php 
     session_start();//crea una sesión para ser usada mediante una petición GET o POST, o pasado por una cookie y la sentencia include_once es la usaremos para incluir el archivo de conexión a la base de datos que creamos anteriormente.
     include_once "conexion.php"; ?>
 
- <div class="main-container">
-        <article class="box" id="home_featured21">
-            <div class="block"><h2>Realizar Logeo</h2>
-             
-               <form action="" method="post" class="registro"> 
-              <div><label>Nombre de Usuario:</label>
-                <input type="text" name="nomUsuario"></div>
-               <div><label>Contraseña:</label>
-                <input type="password" name="contraseña" id="con"></div> 
-               <input type="submit" name="enviar" value="Ingresar"></div> 
-            </form> 
-        </div>
-     </article>  
-  </div> 
+ <!-- Logeo
+   ================================================== -->
+   <section id="contact">
+
+    <div class="row section-head">
+
+      <div class="twelve columns">
+
+          <h2>Realizar Logeo<span>.</span></h2>
+
+            <hr />  
+
+          </div>
+       
+       </div> <!-- end section-head -->
+
+        <div class="row">
+         
+         <div id="contact-form" class="six columns tab-whole left">
+
+            <!-- <form action="" method="post" id="regis" class="registro"> -->
+              <!-- form -->
+            <form name="contactForm" id="contactForm" method="post" action=""  >   
+              <fieldset>
+
+                <div class="group">
+                  <input name="nomUsuario" type="text" id="contactName" placeholder="Nombre de Usuario" value="" minLength="2" required />
+                  </div>
+                   <div>
+                   <input name="contraseña" type="password" id="contactEmail" placeholder="Contraseña" value="" required />
+                   </div>
+
+                   <div>
+                     <button class="submitform" name="enviar">Ingresar</button>
+                     <div id="submit-loader">
+                        <div class="text-loader">Sending...</div>                             
+                    <div class="s-loader">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+              </div>
+                  </div>
+              
+              </fieldset>
+          </form> <!-- Form End -->
      <?php
 
             $nomUsuario=$_POST['nomUsuario']; 

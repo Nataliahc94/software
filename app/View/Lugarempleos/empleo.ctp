@@ -1,32 +1,62 @@
 <?php
 require ("cabeza.ctp");
 ?>
-<?php 
-  session_start();//crea una sesión para ser usada mediante una petición GET o POST, o pasado por una cookie y la sentencia include_once es la usaremos para incluir el archivo de conexión a la base de datos que creamos anteriormente.
+    
+ <?php 
+    session_start();//crea una sesión para ser usada mediante una petición GET o POST, o pasado por una cookie y la sentencia include_once es la usaremos para incluir el archivo de conexión a la base de datos que creamos anteriormente.
     include_once "conexion.php"; ?>
-<div class="main-container">
-        <article class="box" id="home_featured21">
-            <div class="block"><h2>Registrar Empleo</h2>
-                <form action="" method="post" class="registro"> 
-	                <div><label>Titulo:</label> 
-	                    <input type="text" id="ti"name="titulo"></div> 
-                    <div><label>Nombre del Lugar Empleo:</label> 
-                        <input type="text" id="nomle"name="lugar"></div>     
-	                <div><label>Descripcion:</label> 
-	                   <p>
-                            <textarea name="descripcion" id="comment" rows="3"></textarea>                            
-                        </p>
-	                <div><label>Requisitos:</label> 
-	                     <p>
-                            <textarea name="requisitos" id="comment" rows="3"></textarea>                            
-                        </p>
-                    </div> 
-	          		
-	          	 	<input type="submit" name="enviar" value="Registrar"></div>
-	            </form> 
-	            </div>	 	
-        </article>
-       </div>
+ <!-- Registrar empleo
+   ================================================== -->
+   <section id="contact">
+
+    <div class="row section-head">
+
+      <div class="twelve columns">
+
+          <h2>Registrar Empleo<span>.</span></h2>
+
+            <hr />  
+
+          </div>
+       
+       </div> <!-- end section-head -->
+
+        <div class="row">
+         
+         <div id="contact-form" class="six columns tab-whole left">
+
+            <!-- <form action="" method="post" id="regis" class="registro"> -->
+              <!-- form -->
+            <form name="contactForm" id="contactForm" method="post" action=""  >   
+              <fieldset>
+
+                    <div class="group">
+                      <input name="titulo" type="text" id="contactName" placeholder="Titulo" value="" minLength="2" required />
+                      </div>
+                       <div>
+                       <input name="lugar" type="text" id="contactEmail" placeholder="Nombre del Lugar Empleo" value="" required />
+                       </div>
+                       <div>
+                        <textarea name="descripcion"  id="contactMessage" placeholder="Descripcion" rows="10" cols="50" required ></textarea>
+                        </div> 
+                        <div>
+                        <textarea name="requisitos"  id="contactMessage" placeholder="Requisitos" rows="10" cols="50" required ></textarea>
+                         </div> 
+
+                          <div>
+                             <button class="submitform" name="enviar">Registrar</button>
+                             <div id="submit-loader">
+                                <div class="text-loader">Sending...</div>                             
+                            <div class="s-loader">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                      </div>
+                          </div>
+
+                 </fieldset>
+          </form> <!-- Form End -->
 
        <?php
 
