@@ -1,16 +1,26 @@
-<div class="listafavoritos form">
-<?php echo $this->Form->create('Listafavorito'); ?>
-	<fieldset>
-		<legend><?php echo __('Add Listafavorito'); ?></legend>
-	<?php
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
+<?php
+require ("cabeza.ctp");
+?>
 
-		<li><?php echo $this->Html->link(__('List Listafavoritos'), array('action' => 'index')); ?></li>
-	</ul>
-</div>
+ <section id="portfolio">
+
+      <div class="row section-head">
+
+        <div class="twelve columns">
+
+          <h1>Lista de Favoritos<span>.</span></h1>
+
+           <hr />               
+
+           <p>Poner lista
+           </p>
+
+        </div>
+
+      </div>
+       
+     </section> 
+
+<?php
+require ("footer.ctp");
+?>

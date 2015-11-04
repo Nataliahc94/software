@@ -25,6 +25,11 @@ class EmpleosController extends AppController {
 		$this->set('empleos', $this->Paginator->paginate());
 	}
 
+	public function indexu() {
+		$this->Empleo->recursive = 0;
+		$this->set('empleos', $this->Paginator->paginate());
+	}
+
 /**
  * view method
  *

@@ -248,11 +248,15 @@ code {
 }
 
 pre {
-	white-space: pre;
+	
 	white-space: pre-wrap;
 	word-wrap: break-word;
+	display: none;
 }
 
+.cake-sql-log{
+	display: none;
+}
 code {
 	padding: 3px;
 	background: #ECF0F1;
@@ -723,6 +727,8 @@ header .logo a {
 	background-size: 61px 14px;
 }
 
+
+
 /* header social */
 header .header-social {
 	font-size: 20px;
@@ -1025,7 +1031,7 @@ ul#nav li.current a:after {
 /* =================================================================== */
 
 #hero {
-	background: #0F1215 url(../images/hero-bg.jpg) no-repeat center;
+	background: #0F1215 url("../img/hero-bg.jpg") no-repeat center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
@@ -1035,6 +1041,7 @@ ul#nav li.current a:after {
 	position: relative;
 	border-bottom: 1px solid #15191d;
 }
+
 
 .hero-content {
 	position: relative;
@@ -2240,8 +2247,8 @@ ul#nav li.current a:after {
 #contact {
 	background: #12151B;
 	padding-top: 120px;
-	padding-bottom: 138px;
-	overflow: hidden;
+	/* padding-bottom: 138px; */
+	/* overflow: hidden; */
 	border-bottom: 1px solid #15191d;  
 }
 

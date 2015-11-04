@@ -1,5 +1,5 @@
 <?php
-require ("cabeza.ctp");
+require ("cabezau.ctp");
 ?>
 	
 	 <section id="contact">
@@ -34,10 +34,16 @@ require ("cabeza.ctp");
 					</tr>
 					<tr>
 							
-							<td><?php echo $this->Paginator->sort('Lugar '); ?></td>
+							<td><?php echo $this->Paginator->sort('Lugar'); ?></td>
 							<td><?php echo h($empleo['Empleo']['lugarEmpleo_idlugarEmpleo']); ?>&nbsp;</td>
 							
-					</tr>				
+					</tr>
+					<tr>
+							
+							<td><?php echo $this->Paginator->sort('Favorito'); ?></td>
+							<td><?php echo h($empleo['Empleo']['listaFavoritos_idlistaFavoritos']); ?>&nbsp;</td>
+							
+					</tr>
 					</thead>				
 				</table>
 			<?php endforeach; ?>

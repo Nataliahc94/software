@@ -1,5 +1,5 @@
 <?php
-require ("cabeza.ctp");
+require ("cabezau.ctp");
 ?>
 
 

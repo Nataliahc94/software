@@ -11,33 +11,49 @@ include_once "conexion.php";
 
       <div class="twelve columns">
 
-      		<h2><?php echo __('Apoyo medico'); ?></h2>				
+      		<h1>Apoyo Medico<span>.</span></h1>
+
+           <hr />    
+      		<?php foreach ($apoyomedicos as $apoyomedico): ?>					
 				<table cellpadding="0" cellspacing="0">
 				<thead>
-				<tr>
-						
-						<th><?php echo $this->Paginator->sort('Especialista');  ?></th>
-						<th><?php echo $this->Paginator->sort('Nombre'); ?></th>
-						<th><?php echo $this->Paginator->sort('dirección'); ?></th>
-						<th><?php echo $this->Paginator->sort('telefono'); ?></th>
-						<th><?php echo $this->Paginator->sort('Favorito'); ?></th>
-						
-				</tr>
+					<tr>					
+							
+							<td><?php echo $this->Paginator->sort('Nombre'); ?></td>
+							<td><?php echo h($apoyomedico['Apoyomedico']['nombre']); ?>&nbsp;</td> 
+
+					</tr>
+							
+					<tr>					
+							
+							<td><?php echo $this->Paginator->sort('Especialista');  ?></td>
+							<td><?php echo h($apoyomedico['Apoyomedico']['especialista']); ?>&nbsp;</td>
+
+					</tr>
+
+					<tr>					
+							
+							<td><?php echo $this->Paginator->sort('Dirección');  ?></td>
+							<td><?php echo h($apoyomedico['Apoyomedico']['direccion']); ?>&nbsp;</td>
+					</tr>
+
+					<tr>					
+							
+							<td><?php echo $this->Paginator->sort('telefono'); ?></td>
+							<td><?php echo h($apoyomedico['Apoyomedico']['telefono']); ?>&nbsp;</td>
+					</tr>	
+
+					<tr>					
+							
+							<td><?php echo $this->Paginator->sort('Favorito'); ?></td>
+						    <td><?php echo h($apoyomedico['Apoyomedico']['listaFavoritos_idlistaFavoritos']); ?>&nbsp;</td>
+					</tr>				
+
 				</thead>
-				<tbody>
-				<?php foreach ($apoyomedicos as $apoyomedico): ?>
-				<tr>
-					
-					<td><?php echo h($apoyomedico['Apoyomedico']['especialista']); ?>&nbsp;</td>
-					<td><?php echo h($apoyomedico['Apoyomedico']['nombre']); ?>&nbsp;</td> 
-					<td><?php echo h($apoyomedico['Apoyomedico']['direccion']); ?>&nbsp;</td>
-					<td><?php echo h($apoyomedico['Apoyomedico']['telefono']); ?>&nbsp;</td>
-					<td><?php echo h($apoyomedico['Apoyomedico']['listaFavoritos_idlistaFavoritos']); ?>&nbsp;</td>
-					
-				</tr>
-			<?php endforeach; ?>
-				</tbody>
-				</table>
+				
+			</table>
+
+		<?php endforeach; ?>
 		
 				
 <?php

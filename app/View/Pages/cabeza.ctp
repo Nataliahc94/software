@@ -43,8 +43,9 @@
   
    <section id="hero"> 
       
- 
-    <!-- insertar una imagen-->
+      <div class="imagg">
+             <a href="../pages/home"></a>
+          </div>
 
    </section> <!-- end homepage hero -->
 

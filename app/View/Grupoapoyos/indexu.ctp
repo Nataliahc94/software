@@ -1,5 +1,5 @@
 <?php
-require ("cabezah.ctp");
+require ("cabezau.ctp");
 
 
 include_once "conexion.php"; 
@@ -35,6 +35,13 @@ include_once "conexion.php";
 							<td><?php echo h($grupoapoyo['Grupoapoyo']['telefono']); ?>&nbsp;</td>
 							
 					</tr>
+					<tr>
+						
+							<td><?php echo $this->Paginator->sort('Favorito'); ?></td>
+							<td><?php echo h($grupoapoyo['Grupoapoyo']['listaFavoritos_idlistaFavoritos']); ?>&nbsp;</td>
+							
+					</tr>
+
 					</thead>
 				</table>
 			<?php endforeach; ?>
