@@ -25,7 +25,8 @@ include_once "conexion.php";
 
 				<tr style="border: none;">
 					<td style="width: 277px;border: none;"><?php echo $this->Paginator->sort('Tipo');  ?></td>
-					<td style="border: none;"><?php echo h($protesi['Protesi']['tipo']); ?>&nbsp;</td>
+					<td style="border: none;"><?php echo h($protesi['Protesi']['tipo']);?>&nbsp;</td>
+
 				</tr>
 				<tr>
 					<td style="border: none;"><?php echo $this->Paginator->sort('Material'); ?></td>
@@ -62,7 +63,14 @@ include_once "conexion.php";
 				</tr>
 				<tr>						
 					<td style="border: none;"><?php echo $this->Paginator->sort('Favorito'); ?></td>
-					<td style="border: none;"><?php echo h($protesi['Protesi']['listaFavoritos_idlistaFavoritos']); ?>&nbsp;</td>		
+					<td style="border: none;">
+					<form action=""> 
+						
+							<input type=CHECKBOX name="maillist"></input>
+					</form>
+								<!-- Obtenemos el id del usuario -->
+						
+						<?php echo h($protesi['Protesi']['listaFavoritos_idlistaFavoritos']); ?>&nbsp;</td>		
 				</tr>
 				<tr>
 					<td style="padding-bottom: 18px;border: none;"></td>
@@ -71,10 +79,7 @@ include_once "conexion.php";
 	        </table> 
  		</td> 
  		<td align="center">
- 			<img data-src="1.js/100%x100">
- 			<IMG SRC="http://spaceart.com/solar/raw/sat/saturn4.jpg" WIDTH=140 HEIGHT=210 BORDER=3 ALT="Un beb&eacute;" ALIGN="LEFT">
- 			<img src="<?php $this->Html->image('1.jpg', array('alt' => 'CakePHP', 'border' => '0')); ?>" />
- 			<p>JAAAA</p>
+ 			 
  		</td> 
 	 </tr> 
 	 <tr>
@@ -85,9 +90,57 @@ include_once "conexion.php";
 	 <?php endforeach; ?>
 </table>
       		
+<INPUT TYPE=SUBMIT VALUE="Marcar"> 
+				
+		<?php
+							    session_start(); 
+							    include_once "conexion.php"; 
+					   
+				                        
+				                        $idvictima=$_SESSION["idvictima"];
+				                        $idprotesis= h($protesi['Protesi']['idprotesis']); 
+				                        	
 
-				
-				
+				        $consultaid1 = "INSERT into listafavoritos values ('','$idvictima' );";    
+						 $tipo1consultaid = mysql_query($consultaid1); 
+						
+							$teneridfav = "SELECT  idlistaFavoritos from listafavoritos where idusuario='$idvictima';";  
+
+                       
+
+                        $tipo1consulta2 = mysql_query($teneridfav); 
+
+                        $fila=mysql_fetch_row($tipo1consulta2);
+                                  $idfav= $fila[0] ;
+                                  echo $idfav;
+
+
+				        $consulta = "update protesis set idlistaFavoritos= '$idfav' WHERE idprotesis='$idprotesis';";    
+						$tipo1consulta = mysql_query($consulta); 
+                                       
+
+
+                     if(!$tipo1consultaid)
+                     {
+                        echo "No se pudo ejecutar la consulta 1";
+                     }
+                     if(!$tipo1consulta2)
+                     {
+                     	echo  "no se puedo ejecutar la consulta 2";
+                     }
+                    if(!$tipo1consulta)
+                     {
+                    	echo "No se puedo ejecutar la consulta 3";
+                     }
+                    
+
+
+
+
+
+				         ?> 		
 <?php
+
+
 require ("footer.ctp");
 ?>

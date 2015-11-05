@@ -14,10 +14,10 @@ require ("cabezau.ctp");
 			<?php foreach ($empleos as $empleo): ?>
 				<table cellpadding="0" cellspacing="0">
 					<thead>
-					<tr>
+					<tr  style="border: none;">
 							
-							<td><?php echo $this->Paginator->sort('titulo'); ?></td>
-							<td><?php echo h($empleo['Empleo']['titulo']); ?>&nbsp;</td>
+							<td style="width: 277px;border: none;"><?php echo $this->Paginator->sort('titulo'); ?></td>
+							<td style="border: none;"><?php echo h($empleo['Empleo']['titulo']); ?>&nbsp;</td>
 							
 					</tr>
 					<tr>
@@ -44,6 +44,13 @@ require ("cabezau.ctp");
 							<td><?php echo h($empleo['Empleo']['listaFavoritos_idlistaFavoritos']); ?>&nbsp;</td>
 							
 					</tr>
+					<tr>
+							<td style="padding-bottom: 18px;border: none;"></td>
+					</tr>	
+					 <tr>
+							<td style="border-top: 2px solid #FDC501;padding-bottom: 20px;border-right: none;border-left: none;"></td>
+							<td style="border-top: 2px solid #FDC501;padding-bottom: 20px;border-right: none;border-left: none;"></td>
+					</tr>	
 					</thead>				
 				</table>
 			<?php endforeach; ?>

@@ -79,8 +79,8 @@
             </a>            
 
              <ul id="nav" class="nav">
-                <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
-                 <li ><a class="smoothscroll" href="../protesis/indexpro">Protesis.</a>
+                <li><a class="smoothscroll" href="#home">Home</a></li>
+                 <li class="current"><a class="smoothscroll" href="../protesis/indexpro">Protesis.</a>
                         
                  </li>
                 <li><a class="smoothscroll" href="../apoyomedicos/apoyomedico">Apoyo Medico.</a></li>

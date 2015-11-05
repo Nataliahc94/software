@@ -79,7 +79,7 @@
             </a>            
 
              <ul id="nav" class="nav">
-                <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
+                <li><a class="smoothscroll" href="#home">Home</a></li>
                  <li ><a class="smoothscroll" href="../protesis/indexpro">Protesis.</a>
                         
                  </li>
@@ -87,7 +87,7 @@
                 <li><a class="smoothscroll" href="../grupoapoyos/indexh">Apoyo Psicologico.</a></li>                      
                 <li><a class="smoothscroll" href="../empleos/index">Buscar Empleo.</a></li>
                 <li><a class="smoothscroll" href="./quineness">Quienes Somos.</a></li>
-                <li><a class="smoothscroll" href="../Listafavoritos/add">Lista Favoritos.</a></li>
+                <li class="current"><a class="smoothscroll" href="../Listafavoritos/add">Lista Favoritos.</a></li>
              </ul> <!-- end #nav -->
 
           </nav> <!-- end #nav-wrap -->

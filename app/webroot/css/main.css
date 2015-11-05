@@ -723,7 +723,7 @@ header .logo a {
 	color: transparent;
 	width: 114px;
 	height: 66px;
-	background: url("../img/logoK@2x.png") no-repeat center;
+	
 	background-size: 61px 14px;
 }
 
@@ -1031,11 +1031,11 @@ ul#nav li.current a:after {
 /* =================================================================== */
 
 #hero {
-	background: #0F1215 url("../img/hero-bg.jpg") no-repeat center;
+	background: #0F1215 url("../img/cabeza.jpg") no-repeat center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
-	min-height: 630px;
+	min-height: 609px;
 	width: 100%;
 	text-align: left;
 	position: relative;

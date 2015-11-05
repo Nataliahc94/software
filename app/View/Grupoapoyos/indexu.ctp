@@ -17,10 +17,10 @@ include_once "conexion.php";
 			<?php foreach ($grupoapoyos as $grupoapoyo): ?>
 				<table cellpadding="0" cellspacing="0">
 					<thead>
-					<tr>
+					<tr style="border: none;"> 	
 						
-							<td><?php echo $this->Paginator->sort('nombre'); ?></td>
-							<td><?php echo h($grupoapoyo['Grupoapoyo']['nombre']); ?>&nbsp;</td>
+							<td style="width: 277px;border: none;"><?php echo $this->Paginator->sort('nombre'); ?></td>
+							<td style="border: none;"><?php echo h($grupoapoyo['Grupoapoyo']['nombre']); ?>&nbsp;</td>
 							
 					</tr>
 					<tr>
@@ -41,6 +41,13 @@ include_once "conexion.php";
 							<td><?php echo h($grupoapoyo['Grupoapoyo']['listaFavoritos_idlistaFavoritos']); ?>&nbsp;</td>
 							
 					</tr>
+					<tr>
+							<td style="padding-bottom: 18px;border: none;"></td>
+					</tr>	
+					 <tr>
+							<td style="border-top: 2px solid #FDC501;padding-bottom: 20px;border-right: none;border-left: none;"></td>
+							<td style="border-top: 2px solid #FDC501;padding-bottom: 20px;border-right: none;border-left: none;"></td>
+					</tr>	
 
 					</thead>
 				</table>

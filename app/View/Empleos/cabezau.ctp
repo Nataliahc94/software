@@ -79,13 +79,13 @@
             </a>            
 
              <ul id="nav" class="nav">
-                <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
+                <li ><a class="smoothscroll" href="#home">Home</a></li>
                  <li ><a class="smoothscroll" href="../protesis/indexpro">Protesis.</a>
                         
                  </li>
                 <li><a class="smoothscroll" href="../apoyomedicos/apoyomedico">Apoyo Medico.</a></li>
                 <li><a class="smoothscroll" href="../grupoapoyos/indexu">Apoyo Psicologico.</a></li>                      
-                <li><a class="smoothscroll" href="../empleos/indexu">Buscar Empleo.</a></li>
+                <li class="current"><a class="smoothscroll" href="../empleos/indexu">Buscar Empleo.</a></li>
                 <li><a class="smoothscroll" href="../pages/quineness1">Quienes Somos.</a></li>
                 <li><a class="smoothscroll" href="../Listafavoritos/add">Lista Favoritos.</a></li>
              </ul> <!-- end #nav -->
