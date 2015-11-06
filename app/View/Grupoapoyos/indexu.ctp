@@ -37,8 +37,8 @@ include_once "conexion.php";
 					</tr>
 					<tr>
 						
-							<td><?php echo $this->Paginator->sort('Favorito'); ?></td>
-							<td><?php echo h($grupoapoyo['Grupoapoyo']['listaFavoritos_idlistaFavoritos']); ?>&nbsp;</td>
+							<td style="border: none;">
+							<button  name="maillist" type="button"  id="favorito" onclick="agregar_favoritos('<?php echo h($grupoapoyo['Grupoapoyo']['idgrupoApoyo']); ?>')">Favorito</button>
 							
 					</tr>
 					<tr>
@@ -52,6 +52,35 @@ include_once "conexion.php";
 					</thead>
 				</table>
 			<?php endforeach; ?>
+
+
+	<script type="text/javascript">
+		
+		function agregar_favoritos(idPro) {
+ 			console.log("agregado a favoritos    "+idPro);
+	
+			$.ajax({
+	            beforeSend: function() {},
+	            type: "POST",
+	            url: "favoritos",
+	            data: {
+	                'idgrupoApoyo': idPro
+	            }
+	        }).done(function(t) {
+	            if(t){
+	               
+	              //  console.log(t);
+	            }else{
+	                console.log("MIERDA");
+	            }
+	            return false;
+	            NProgress.done();
+
+	        });
+	   }
+
+	</script>
+
 
 				
 <?php

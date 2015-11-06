@@ -106,4 +106,61 @@ class EmpleosController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+
+	public function favoritos() {
+			session_start(); 
+    		include_once "../View/Protesis/conexion.php"; 
+
+		    if( isset($_POST['idempleo']) )
+		     {
+			      $idempleo = $_POST['idempleo'];
+			     echo $idempleo;
+
+			     	$idvictima=$_SESSION["idvictima"];
+			     	echo $idvictima;
+				   
+				    	
+
+				    $consultaid1 = "INSERT into listafavoritos values ('','$idvictima','', '5', '', '','$idempleo');";    
+					$tipo1consultaid = mysql_query($consultaid1); 
+				
+					
+					$teneridfav = "SELECT  idlistaFavoritos from listafavoritos where idusuario='$idvictima' and idempleo_fav = '$idempleo';";  
+
+				   
+
+				    $tipo1consulta2 = mysql_query($teneridfav); 
+
+				    $fila=mysql_fetch_row($tipo1consulta2);
+				              $idfav= $fila[0] ;
+				              echo $idfav;
+
+
+				    
+				                       
+
+
+				     if(!$tipo1consultaid)
+				     {
+				        echo "No se pudo ejecutar la consulta 1";
+				     }
+				     if(!$tipo1consulta2)
+				     {
+				     	echo  "no se puedo ejecutar la consulta 2";
+				     }
+				    
+
+
+
+
+		     } 
+		     else 
+		     {
+		      	echo "no entro";
+		     }
+    	
+   
+		//echo "jaaaaaaaaaa   "+$idProtesis;
+		return false;
+	}
 }

@@ -63,13 +63,8 @@ include_once "conexion.php";
 				</tr>
 				<tr>						
 					<td style="border: none;">
-					
-				
 					<button  name="maillist" type="button"  id="favorito" onclick="agregar_favoritos('<?php echo h($protesi['Protesi']['idprotesis']); ?>')">Favorito</button>
-					
-								<!-- Obtenemos el id del usuario -->
 						
-						<?php echo h($protesi['Protesi']['listaFavoritos_idlistaFavoritos']); ?>&nbsp;</td>		
 				</tr>
 				<tr>
 					<td style="padding-bottom: 18px;border: none;"></td>

@@ -40,8 +40,8 @@ require ("cabezau.ctp");
 					</tr>
 					<tr>
 							
-							<td><?php echo $this->Paginator->sort('Favorito'); ?></td>
-							<td><?php echo h($empleo['Empleo']['listaFavoritos_idlistaFavoritos']); ?>&nbsp;</td>
+							<td style="border: none;">
+							<button  name="maillist" type="button"  id="favorito" onclick="agregar_favoritos('<?php echo h($empleo['Empleo']['idempleo']); ?>')">Favorito</button>
 							
 					</tr>
 					<tr>
@@ -54,6 +54,33 @@ require ("cabezau.ctp");
 					</thead>				
 				</table>
 			<?php endforeach; ?>
+
+			<script type="text/javascript">
+		
+		function agregar_favoritos(idPro) {
+ 			console.log("agregado a favoritos    "+idPro);
+	
+			$.ajax({
+	            beforeSend: function() {},
+	            type: "POST",
+	            url: "favoritos",
+	            data: {
+	                'idempleo': idPro
+	            }
+	        }).done(function(t) {
+	            if(t){
+	               
+	              //  console.log(t);
+	            }else{
+	                console.log("MIERDA");
+	            }
+	            return false;
+	            NProgress.done();
+
+	        });
+	   }
+
+	</script>
 			
 <?php
 require ("footer.ctp");

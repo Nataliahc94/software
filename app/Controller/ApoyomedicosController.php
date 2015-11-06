@@ -126,7 +126,7 @@ class ApoyomedicosController extends AppController {
 				   
 				    	
 
-				    $consultaid1 = "INSERT into listafavoritos values ('','$idvictima','', '2','$idapoyoMedico');";    
+				    $consultaid1 = "INSERT into listafavoritos values ('','$idvictima','', '2','$idapoyoMedico','','');";    
 					$tipo1consultaid = mysql_query($consultaid1); 
 				
 					

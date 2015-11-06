@@ -117,4 +117,60 @@ class GrupoapoyosController extends AppController {
 	public function home() {
 
 	}
+	public function favoritos() {
+			session_start(); 
+    		include_once "../View/Protesis/conexion.php"; 
+
+		    if( isset($_POST['idgrupoApoyo']) )
+		     {
+			      $idgrupoApoyo = $_POST['idgrupoApoyo'];
+			     echo $idgrupoApoyo;
+
+			     	$idvictima=$_SESSION["idvictima"];
+			     	echo $idvictima;
+				   
+				    	
+
+				    $consultaid1 = "INSERT into listafavoritos values ('','$idvictima','', '3', '', '$idgrupoApoyo','');";    
+					$tipo1consultaid = mysql_query($consultaid1); 
+				
+					
+					$teneridfav = "SELECT  idlistaFavoritos from listafavoritos where idusuario='$idvictima' and idgrupoApoyo_fav = '$idgrupoApoyo';";  
+
+				   
+
+				    $tipo1consulta2 = mysql_query($teneridfav); 
+
+				    $fila=mysql_fetch_row($tipo1consulta2);
+				              $idfav= $fila[0] ;
+				              echo $idfav;
+
+
+				    
+				                       
+
+
+				     if(!$tipo1consultaid)
+				     {
+				        echo "No se pudo ejecutar la consulta 1";
+				     }
+				     if(!$tipo1consulta2)
+				     {
+				     	echo  "no se puedo ejecutar la consulta 2";
+				     }
+				    
+
+
+
+
+		     } 
+		     else 
+		     {
+		      	echo "no entro";
+		     }
+    	
+   
+		//echo "jaaaaaaaaaa   "+$idProtesis;
+		return false;
+	}
 }
