@@ -62,12 +62,11 @@ include_once "conexion.php";
 					
 				</tr>
 				<tr>						
-					<td style="border: none;"><?php echo $this->Paginator->sort('Favorito'); ?></td>
 					<td style="border: none;">
-					<form action=""> 
-						
-							<input type=CHECKBOX name="maillist"></input>
-					</form>
+					
+				
+					<button  name="maillist" type="button"  id="favorito" onclick="agregar_favoritos('<?php echo h($protesi['Protesi']['idprotesis']); ?>')">Favorito</button>
+					
 								<!-- Obtenemos el id del usuario -->
 						
 						<?php echo h($protesi['Protesi']['listaFavoritos_idlistaFavoritos']); ?>&nbsp;</td>		
@@ -90,57 +89,37 @@ include_once "conexion.php";
 	 <?php endforeach; ?>
 </table>
       		
-<INPUT TYPE=SUBMIT VALUE="Marcar"> 
-				
-		<?php
-							    session_start(); 
-							    include_once "conexion.php"; 
-					   
-				                        
-				                        $idvictima=$_SESSION["idvictima"];
-				                        $idprotesis= h($protesi['Protesi']['idprotesis']); 
-				                        	
-
-				        $consultaid1 = "INSERT into listafavoritos values ('','$idvictima' );";    
-						 $tipo1consultaid = mysql_query($consultaid1); 
-						
-							$teneridfav = "SELECT  idlistaFavoritos from listafavoritos where idusuario='$idvictima';";  
-
-                       
-
-                        $tipo1consulta2 = mysql_query($teneridfav); 
-
-                        $fila=mysql_fetch_row($tipo1consulta2);
-                                  $idfav= $fila[0] ;
-                                  echo $idfav;
-
-
-				        $consulta = "update protesis set idlistaFavoritos= '$idfav' WHERE idprotesis='$idprotesis';";    
-						$tipo1consulta = mysql_query($consulta); 
-                                       
-
-
-                     if(!$tipo1consultaid)
-                     {
-                        echo "No se pudo ejecutar la consulta 1";
-                     }
-                     if(!$tipo1consulta2)
-                     {
-                     	echo  "no se puedo ejecutar la consulta 2";
-                     }
-                    if(!$tipo1consulta)
-                     {
-                    	echo "No se puedo ejecutar la consulta 3";
-                     }
-                    
 
 
 
+	<script type="text/javascript">
+		
+		function agregar_favoritos(idPro) {
+ 			console.log("agregado a favoritos    "+idPro);
+	
+			$.ajax({
+	            beforeSend: function() {},
+	            type: "POST",
+	            url: "favoritos",
+	            data: {
+	                'idProtesis': idPro
+	            }
+	        }).done(function(t) {
+	            if(t){
+	               
+	              //  console.log(t);
+	            }else{
+	                console.log("MIERDA");
+	            }
+	            return false;
+	            NProgress.done();
 
+	        });
+	   }
 
-				         ?> 		
+	</script>
+
+	
 <?php
-
-
-require ("footer.ctp");
+	require ("footer.ctp");
 ?>

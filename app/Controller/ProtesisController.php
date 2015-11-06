@@ -109,4 +109,68 @@ class ProtesisController extends AppController {
 		$this->Protesi->recursive = 0;
 		$this->set('protesis', $this->Paginator->paginate());
 	}
+
+	public function favoritos() {
+			session_start(); 
+    		include_once "../View/Protesis/conexion.php"; 
+
+		    if( isset($_POST['idProtesis']) )
+		     {
+			      $idProtesis = $_POST['idProtesis'];
+			     echo $idProtesis;
+
+			     	$idvictima=$_SESSION["idvictima"];
+			     	echo $idvictima;
+				   
+				    	
+
+				    $consultaid1 = "INSERT into listafavoritos values ('','$idvictima','$idProtesis', '4', '');";    
+					$tipo1consultaid = mysql_query($consultaid1); 
+				
+					
+					$teneridfav = "SELECT  idlistaFavoritos from listafavoritos where idusuario='$idvictima' and idProtesis_listafav = '$idProtesis';";  
+
+				   
+
+				    $tipo1consulta2 = mysql_query($teneridfav); 
+
+				    $fila=mysql_fetch_row($tipo1consulta2);
+				              $idfav= $fila[0] ;
+				              echo $idfav;
+
+
+				    
+				                       
+
+
+				     if(!$tipo1consultaid)
+				     {
+				        echo "No se pudo ejecutar la consulta 1";
+				     }
+				     if(!$tipo1consulta2)
+				     {
+				     	echo  "no se puedo ejecutar la consulta 2";
+				     }
+				    
+
+
+
+
+		     } 
+		     else 
+		     {
+		      	echo "no entro";
+		     }
+    	
+   
+		//echo "jaaaaaaaaaa   "+$idProtesis;
+		return false;
+	}
+
 }
+
+
+
+
+
+?>

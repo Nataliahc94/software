@@ -8,6 +8,8 @@
    <link rel="stylesheet" href="css/main.css">  
     <script src="js/modernizr.js"></script>
     <link rel="shortcut icon" href="favicon.png" >
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 
 
 <body>

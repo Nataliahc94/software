@@ -4,6 +4,7 @@ require ("cabezah.ctp");
 
 include_once "conexion.php"; 
 ?>
+<meta charset="utf-8"/>
 
  <section id="contact">
 
@@ -33,20 +34,24 @@ include_once "conexion.php";
 
 					<tr>					
 							
-							<td><?php echo $this->Paginator->sort('Dirección');  ?></td>
+							<td><?php echo $this->Paginator->sort('Direccion');  ?></td>
 							<td><?php echo h($apoyomedico['Apoyomedico']['direccion']); ?>&nbsp;</td>
 					</tr>
 
 					<tr>					
 							
 							<td><?php echo $this->Paginator->sort('telefono'); ?></td>
-							<td><?php echo h($apoyomedico['Apoyomedico']['telefono']); ?>&nbsp;</td>
+							<td ><?php echo h($apoyomedico['Apoyomedico']['telefono']); ?>&nbsp;</td>
 					</tr>	
 
 					<tr>					
-							
-							<td><?php echo $this->Paginator->sort('Favorito'); ?></td>
-						    <td><?php echo h($apoyomedico['Apoyomedico']['listaFavoritos_idlistaFavoritos']); ?>&nbsp;</td>
+							<td style="border: none;">
+					
+				
+					<button  name="maillist" type="button"  id="favorito" onclick="agregar_favoritos('<?php echo h($apoyomedico['Apoyomedico']['idapoyoMedico']); ?>')">Favorito</button>
+
+								
+						</td>	
 					</tr>
 					<tr>
 							<td style="padding-bottom: 18px;border: none;"></td>
@@ -61,6 +66,35 @@ include_once "conexion.php";
 			</table>
 
 		<?php endforeach; ?>
+	
+
+	<script type="text/javascript">
+		
+		function agregar_favoritos(idPro) {
+ 			console.log("agregado a favoritos    "+idPro);
+	
+			$.ajax({
+	            beforeSend: function() {},
+	            type: "POST",
+	            url: "favoritos",
+	            data: {
+	                'idapoyoMedico': idPro
+	            }
+	        }).done(function(t) {
+	            if(t){
+	               
+	              //  console.log(t);
+	            }else{
+	                console.log("MIERDA");
+	            }
+	            return false;
+	            NProgress.done();
+
+	        });
+	   }
+
+	</script>
+
 		
 				
 <?php

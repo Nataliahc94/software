@@ -111,4 +111,61 @@ class ApoyomedicosController extends AppController {
 		$this->Apoyomedico->recursive = 0;
 		$this->set('apoyomedicos', $this->Paginator->paginate());
 	} 
+
+	public function favoritos() {
+			session_start(); 
+    		include_once "../View/Protesis/conexion.php"; 
+
+		    if( isset($_POST['idapoyoMedico']) )
+		     {
+			      $idapoyoMedico = $_POST['idapoyoMedico'];
+			     echo $idapoyoMedico;
+
+			     	$idvictima=$_SESSION["idvictima"];
+			     	echo $idvictima;
+				   
+				    	
+
+				    $consultaid1 = "INSERT into listafavoritos values ('','$idvictima','', '2','$idapoyoMedico');";    
+					$tipo1consultaid = mysql_query($consultaid1); 
+				
+					
+					$teneridfav = "SELECT  idlistaFavoritos from listafavoritos where idusuario='$idvictima' and idApoyoMedico_fav = '$idapoyoMedico';";  
+
+				   
+
+				    $tipo1consulta2 = mysql_query($teneridfav); 
+
+				    $fila=mysql_fetch_row($tipo1consulta2);
+				              $idfav= $fila[0] ;
+				              echo $idfav;
+
+
+				    
+				                       
+
+
+				     if(!$tipo1consultaid)
+				     {
+				        echo "No se pudo ejecutar la consulta 1";
+				     }
+				     if(!$tipo1consulta2)
+				     {
+				     	echo  "no se puedo ejecutar la consulta 2";
+				     }
+				    
+
+
+
+
+		     } 
+		     else 
+		     {
+		      	echo "no entro";
+		     }
+    	
+   
+		echo "jaaaaaaaaaa   "+$idapoyoMedico;
+		return false;
+	}
 }
