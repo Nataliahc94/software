@@ -25,6 +25,20 @@ class ApoyomedicosController extends AppController {
 		$this->set('apoyomedicos', $this->Paginator->paginate());
 	}
 
+	public function indexh() {
+		$this->Apoyomedico->recursive = 0;
+		$this->set('apoyomedicos', $this->Paginator->paginate());
+	}
+	public function quineness()
+	{
+
+	}
+	public function indexa() {
+		$this->Apoyomedico->recursive = 0;
+		$this->set('apoyomedicos', $this->Paginator->paginate());
+	}
+
+
 
 
 /**

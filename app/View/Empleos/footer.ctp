@@ -5,15 +5,14 @@
       	<div class="twelve columns content group">
       		
 				<ul class="social-links">
-               <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-               <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
-               <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>               
-               <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+               <li><a href="https://www.facebook.com/Apoyovictimasminas-1271448869538428/"><i class="fa fa-facebook-square"></i></a></li>
+               <li><a href="https://twitter.com/ApoyoVictiMinas"><i class="fa fa-twitter-square"></i></a></li>
+               <li><a href="https://plus.google.com/u/0/116312367602025016940/posts"><i class="fa fa-google-plus-square"></i></a></li>               
+               <li><a href="https://www.youtube.com/channel/UCYh0V7Ox6leG1w-UxWkgjfA"><i class="fa fa-youtube-play"></i></a></li>
                <li><a href="#"><i class="fa fa-vimeo-square"></i></a></li>
                <li><a href="#"><i class="fa fa-flickr"></i></a></li>               
                <li><a href="#"><i class="fa fa-skype"></i></a></li>
             </ul>
-
             <hr />
 
             <div class="info">

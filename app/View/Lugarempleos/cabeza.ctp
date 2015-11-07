@@ -86,17 +86,17 @@
             </a>            
 
              <ul id="nav" class="nav">
-                <li class="current"><a class="smoothscroll" href="./home">Home</a></li>                     
-                <li><a class="smoothscroll" href="../empleos/index">Empleos.</a></li>
-                <li><a class="smoothscroll" href="#about">Quienes Somos.</a></li>
+                <li><a class="smoothscroll" href="./inicio">Home</a></li>                     
+                <li><a class="smoothscroll" href="../empleos/indexe">Empleos.</a></li>
+                <li><a class="smoothscroll" href="../empleos/quineness">Quienes Somos.</a></li>
              </ul> <!-- end #nav -->
 
           </nav> <!-- end #nav-wrap -->
 
           <ul class="header-social">
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                 <li><a href="https://www.facebook.com/Apoyovictimasminas-1271448869538428/"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/ApoyoVictiMinas"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://plus.google.com/u/0/116312367602025016940/posts"><i class="fa fa-google-plus"></i></a></li>
           </ul>      
 
        </div>

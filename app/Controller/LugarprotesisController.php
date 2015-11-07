@@ -107,4 +107,9 @@ class LugarprotesisController extends AppController {
 	public function protesis() {
 
 	}
+	public function quineness()
+	{
+
+	}
+	
 }

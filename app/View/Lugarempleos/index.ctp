@@ -71,7 +71,7 @@ require ("cabeza.ctp");
                 $idempleador=$_SESSION["idempleador"];
            
 		    	
-		    	 $consultaE = "INSERT INTO lugarempleo(`idlugarEmpleo`, `nombre`, `direccion`, `telefono`, `uempleador_iduempleador`) VALUES ('','$nombre','$direccion','$telefono',$idempleador) ; ";
+		        	 $consultaE = "INSERT INTO lugarempleo(`idlugarEmpleo`, `nombre`, `direccion`, `telefono`, `uempleador_iduempleador`) VALUES ('','$nombre','$direccion','$telefono',$idempleador) ; ";
                              
                  $consulta = mysql_query($consultaE); 
 

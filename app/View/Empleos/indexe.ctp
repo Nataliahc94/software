@@ -1,7 +1,5 @@
 <?php
-require ("cabeza.ctp");
-session_start(); 
-            include_once "conexion.php"; 
+require ("cabezae.ctp");
 ?>
 	
 	 <section id="contact">
@@ -36,21 +34,8 @@ session_start();
 					</tr>
 					<tr>
 							
-							<td><?php echo $this->Paginator->sort('Lugar'); ?></td>
-							
-							<?php
-							 $idestable= h($empleo['Empleo']['lugarEmpleo_idlugarEmpleo']);  
-                        $consulta3 = "SELECT nombre FROM lugarempleo WHERE idlugarEmpleo='$idestable'";     
-
-                         $consultaa3 = mysql_query($consulta3); 
-
-                         if(!$consultaa3)
-                         {
-                            echo "No se pudo ejecutar la consulta 2";
-                         }
-                          $lugarempleop=mysql_fetch_row($consultaa3);
-                          $lugaremple = $lugarempleop[0];  ?>
-                          <td><?php echo $lugaremple; ?>&nbsp;</td>
+							<td><?php echo $this->Paginator->sort('Lugar '); ?></td>
+							<td><?php echo h($empleo['Empleo']['lugarEmpleo_idlugarEmpleo']); ?>&nbsp;</td>
 							
 					</tr>
 					<tr>

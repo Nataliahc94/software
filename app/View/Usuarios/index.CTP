@@ -16,7 +16,7 @@ require ("cabezar.ctp");
 
       <div class="twelve columns">
 
-          <h2>Registrar Usuario<span>.</span></h2>
+          <h1>Registrar Usuario<span>.</span></h1>
 
             <hr />  
 
@@ -56,7 +56,7 @@ require ("cabezar.ctp");
                    </div> 
 
                      <div>
-                 <select name="opcion" id="numtexts" placeholder="Seleccione un tipo de usuario" onchange="crear(this.value)">
+                 <select  style= "width: 550px;" name="opcion" id="numtexts" placeholder="Seleccione un tipo de usuario" onchange="crear(this.value)">
                             <option value="0">Seleccionar</option>
                             <option value="1">Victima</option>
                             <option value="2">Medico</option>
@@ -68,7 +68,7 @@ require ("cabezar.ctp");
 
 
                   <div>
-                     <button class="submitform" name="enviar">Registrar</button>
+                     <button style= "width: 550px;" class="submitform" name="enviar">Registrar</button>
                      <div id="submit-loader">
                         <div class="text-loader">Sending...</div>                             
                     <div class="s-loader">
@@ -127,8 +127,10 @@ require ("cabezar.ctp");
                mysql_query("INSERT into usuario values ('','$nombre','$email','$ciudad','$
                 departamento'); "); 
 
-                
-
+                if( $_POST['opcion']=="0")
+                  {
+                    echo "Debe de Seleccionar un tipo de Usuario";
+                  }
                   if( $_POST['opcion']=="1")
                   {
                          echo "Opcion 1";
@@ -248,13 +250,13 @@ require ("cabezar.ctp");
              }
              else
              {
-                echo "Las contraseñas no coinciden";
+                echo "  Las contraseñas no coinciden";
              }
          }
         else 
         {  
             
-             echo "Ya se encuentra registrado";
+             echo "  Ya se encuentra registrado";
         } 
           
                 

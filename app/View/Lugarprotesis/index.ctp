@@ -13,7 +13,7 @@ require ("cabeza.ctp");
 
       <div class="twelve columns">
 
-        <h2>Registrar Lugar Protesis<span>.</span></h2>
+        <h2>Registrar Lugar Prótesis<span>.</span></h2>
 
                <hr />  
 

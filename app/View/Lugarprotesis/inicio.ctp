@@ -7,7 +7,7 @@ require ("cabeza.ctp");
 
         <div class="twelve columns">
 
-          <h1>Mision<span>.</span></h1>
+          <h1>Misión<span>.</span></h1>
 
            <hr />               
 
@@ -21,7 +21,7 @@ require ("cabeza.ctp");
 
         <div class="twelve columns">
 
-          <h1>Vision<span>.</span></h1>
+          <h1>Visión<span>.</span></h1>
 
            <hr />               
 

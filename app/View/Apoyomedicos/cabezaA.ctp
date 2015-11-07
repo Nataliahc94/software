@@ -23,10 +23,28 @@
             <a class="mobile-btn" href="#" title="Hide navigation">
                 <span class="menu-icon">Menu</span>
             </a>            
+                 <?php
+                    session_start(); 
+                    include_once "conexion.php";
+                    ?>
+                         <ul id="nav" class="nav" >
+                    <?php
+                        
+                        $idmedico=$_SESSION["idmedico"];
+                        $consultaid1 = "SELECT nombreUsuario FROM `umedico` WHERE idumedico ='$idmedico'";      
 
-             <ul id="nav" class="nav" >
-                <li class="current"><a class="smoothscroll" href="../Usuarios/index">Registro</a></li>
-                 <li ><a class="smoothscroll" href="../Usuarios/inicio">Login.</a>
+                        $tipo1consultaid = mysql_query($consultaid1); 
+
+                     if(!$tipo1consultaid)
+                     {
+                        echo "No se pudo ejecutar la consulta";
+                     }
+                      $fila1id=mysql_fetch_row($tipo1consultaid);
+                        $nombreUsuario = $fila1id[0];
+                        echo $nombreUsuario;
+                        ?> 
+                <li class="current"><a class="smoothscroll" href="../apoyomedicos/index">Registrar Apoyo Medico</a></li>
+                  <li><a class="smoothscroll" href="../pages/home">CERRAR SESIÓN.</a></li>   
                         
                  </li>
                
@@ -43,8 +61,9 @@
   
    <section id="hero"> 
       
- 
-    <!-- insertar una imagen-->
+      <div class="imagg">
+             <a href="../pages/home"></a>
+          </div>
 
    </section> <!-- end homepage hero -->
 
@@ -66,14 +85,12 @@
             </a>            
 
              <ul id="nav" class="nav">
-                <li><a class="smoothscroll" href="./home">Home</a></li>
-                 <li ><a class="smoothscroll" href="../protesis/index">Prótesis.</a>
+                 <li><a class="smoothscroll" href="../apoyomedicos/inicio">Home</a></li>
                         
                  </li>
-                <li><a class="smoothscroll" href="../apoyomedicos/indexh">Apoyo Medico.</a></li>
-                <li><a class="smoothscroll" href="../grupoapoyos/indexh">Apoyo Psicológico.</a></li>                      
-                <li class="current"><a class="smoothscroll" href="../empleos/index">Buscar Empleo.</a></li>
-                <li><a class="smoothscroll" href="../pages/quineness">Quienes Somos.</a></li>
+                <li><a class="smoothscroll" href="../apoyomedicos/indexa">Apoyo Medico.</a></li>
+                <li><a class="smoothscroll" href="../apoyomedicos/quineness">Quienes Somos.</a></li>
+                
              </ul> <!-- end #nav -->
 
           </nav> <!-- end #nav-wrap -->
@@ -82,7 +99,7 @@
                 <li><a href="https://www.facebook.com/Apoyovictimasminas-1271448869538428/"><i class="fa fa-facebook"></i></a></li>
                 <li><a href="https://twitter.com/ApoyoVictiMinas"><i class="fa fa-twitter"></i></a></li>
                 <li><a href="https://plus.google.com/u/0/116312367602025016940/posts"><i class="fa fa-google-plus"></i></a></li>
-          </ul>       
+          </ul>    
 
        </div>
 

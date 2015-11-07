@@ -1,5 +1,5 @@
 <?php
-require ("cabezah.ctp");
+require ("cabeza.ctp");
 
 
 include_once "conexion.php"; 

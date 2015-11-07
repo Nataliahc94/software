@@ -1,7 +1,5 @@
 <?php
 require ("cabezapro.ctp");
-
-
 include_once "conexion.php"; 
 ?>
 
@@ -12,7 +10,7 @@ include_once "conexion.php";
       <div class="twelve columns">
 
       	
-      	<h1>Protesis<span>.</span></h1>
+      	<h1>Prótesis<span>.</span></h1>
 
            <hr /> 
 
@@ -31,10 +29,6 @@ include_once "conexion.php";
 				<tr>
 					<td style="border: none;"><?php echo $this->Paginator->sort('Material'); ?></td>
 					<td style="border: none;"><?php echo h($protesi['Protesi']['material']); ?>&nbsp;</td> 
-				</tr>
-				<tr>
-					<td style="border: none;"><?php echo $this->Paginator->sort('Tamaño'); ?></td>
-					<td style="border: none;"><?php echo h($protesi['Protesi']['tamaño']); ?>&nbsp;</td>
 				</tr>
 				<tr>
 					<td style="border: none;"><?php echo $this->Paginator->sort('Precio'); ?></td>

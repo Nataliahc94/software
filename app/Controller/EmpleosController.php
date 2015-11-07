@@ -29,6 +29,14 @@ class EmpleosController extends AppController {
 		$this->Empleo->recursive = 0;
 		$this->set('empleos', $this->Paginator->paginate());
 	}
+	public function indexe() {
+		$this->Empleo->recursive = 0;
+		$this->set('empleos', $this->Paginator->paginate());
+	}
+	public function quineness()
+	{
+
+	}
 
 /**
  * view method

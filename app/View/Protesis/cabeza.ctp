@@ -66,12 +66,12 @@
             </a>            
 
              <ul id="nav" class="nav">
-                <li><a class="smoothscroll" href="./home">Home</a></li>
-                 <li class="current"><a class="smoothscroll" href="../protesis/index">Protesis.</a>
+                <li><a class="smoothscroll" href="../pages/home">Home</a></li>
+                 <li class="current"><a class="smoothscroll" href="../protesis/index">Prótesis.</a>
                         
                  </li>
-                <li><a class="smoothscroll" href="../apoyomedicos/apoyomedico">Apoyo Medico.</a></li>
-                <li><a class="smoothscroll" href="../grupoapoyos/indexh">Apoyo Psicologico.</a></li>                      
+                <li><a class="smoothscroll" href="../apoyomedicos/indexh">Apoyo Medico.</a></li>
+                <li><a class="smoothscroll" href="../grupoapoyos/indexh">Apoyo Psicológico.</a></li>                      
                 <li><a class="smoothscroll" href="../empleos/index">Buscar Empleo.</a></li>
                 <li><a class="smoothscroll" href="../pages/quineness">Quienes Somos.</a></li>
              </ul> <!-- end #nav -->
@@ -79,10 +79,10 @@
           </nav> <!-- end #nav-wrap -->
 
           <ul class="header-social">
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-          </ul>      
+                <li><a href="https://www.facebook.com/Apoyovictimasminas-1271448869538428/"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/ApoyoVictiMinas"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://plus.google.com/u/0/116312367602025016940/posts"><i class="fa fa-google-plus"></i></a></li>
+          </ul>       
 
        </div>
 

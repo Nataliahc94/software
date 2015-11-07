@@ -44,8 +44,8 @@
                         $nombreUsuario = $fila1id[0];
                         echo $nombreUsuario;
                         ?> 
-                <li><a class="smoothscroll" href="./index">Registrar Lugar Protesis.</a></li>
-                 <li ><a class="smoothscroll" href="./protesis">Regsitar Protesis.</a>
+                <li><a class="smoothscroll" href="./index">Registrar Lugar Prótesis.</a></li>
+                 <li ><a class="smoothscroll" href="./protesis">Regsitar Prótesis.</a>
                   <li><a class="smoothscroll" href="../pages/home">CERRAR SESIÓN.</a></li>   
                         
                  </li>
@@ -83,7 +83,7 @@
 
              <ul id="nav" class="nav">
                 <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
-                 <li ><a class="smoothscroll" href="../protesis/indexpr">Protesis.</a>                   
+                 <li ><a class="smoothscroll" href="../protesis/indexpr">Prótesis.</a>                   
                  </li>
                 <li><a class="smoothscroll" href="./quineness">Quienes Somos.</a></li>
              </ul> <!-- end #nav -->
@@ -91,9 +91,9 @@
           </nav> <!-- end #nav-wrap -->
 
           <ul class="header-social">
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="https://www.facebook.com/Apoyovictimasminas-1271448869538428/"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/ApoyoVictiMinas"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://plus.google.com/u/0/116312367602025016940/posts"><i class="fa fa-google-plus"></i></a></li>
           </ul>      
 
        </div>

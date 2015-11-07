@@ -62,7 +62,7 @@ require ("cabezal.ctp");
           {
                 echo 'Por favor llene todos los campos.';//Si los campos están vacíos. 
           }
-          else
+          if($_POST['nomUsuario'] != '' or $_POST['contraseña'] != '' )
           {
 
                  $consultaE = "SELECT tipo FROM uvictima WHERE nombreUsuario= '$nomUsuario'";                          
@@ -248,7 +248,7 @@ require ("cabezal.ctp");
                  }
                  else
                  {
-                   // echo "No se encuentra registrado";
+                    echo "La Contraseña o el Nombre de usuario no son correctos";
                     
                  }
           }
