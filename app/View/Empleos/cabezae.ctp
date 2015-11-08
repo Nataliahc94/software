@@ -44,8 +44,8 @@
                         echo $nombreUsuario;
                         ?> 
 
-                    <li><a class="smoothscroll" href="./index">Registrar Lugar Empleo</a></li>  
-                    <li><a class="smoothscroll" href="./empleo">Registrar Empleo</a></li>  
+                    <li><a class="smoothscroll" href="../lugarempleos/index">Registrar Lugar Empleo</a></li>  
+                    <li><a class="smoothscroll" href="../lugarempleos/empleo">Registrar Empleo</a></li>  
                    
                     <li class="current"><a class="smoothscroll" href="../pages/home">CERRAR SESIÓN</a></li>
 
@@ -86,9 +86,9 @@
             </a>            
 
              <ul id="nav" class="nav">
-                <li class="current"><a class="smoothscroll" href="./home">Home</a></li>                     
-                <li><a class="smoothscroll" href="../empleos/index">Empleos.</a></li>
-                <li><a class="smoothscroll" href="#about">Quienes Somos.</a></li>
+                <li class="current"><a class="smoothscroll" href="../lugarempleos/inicio">Home</a></li>                     
+                <li><a class="smoothscroll" href="../empleos/indexe">Empleos.</a></li>
+                <li><a class="smoothscroll" href="../empleos/quineness">Quienes Somos.</a></li>
              </ul> <!-- end #nav -->
 
           </nav> <!-- end #nav-wrap -->
