@@ -556,6 +556,11 @@ input[type="button"] {
 	margin-left: 250px;
 }
 
+#tabl {
+	visibility: hidden;
+
+}
+
 .button:hover,
 button:hover,
 input[type="submit"]:hover,

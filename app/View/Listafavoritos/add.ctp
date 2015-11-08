@@ -30,6 +30,18 @@ require ("cabeza.ctp");
                                    
                            $idconsulta = mysql_query($consulta); 
 
+                           if (mysql_num_rows($idconsulta) == 0) 
+                           { 
+                            
+                              $idtabla1="id='tabl'";
+                           } 
+                          else 
+                          { 
+                            
+                             $idtabla1="";
+                           
+                          } 
+
                            if(!$idconsulta)
                            {
                               echo "No se pudo ejecutar la consulta";
@@ -67,6 +79,18 @@ require ("cabeza.ctp");
                                    
                            $ApoyoMCconsulta = mysql_query($consultaApoyoM); 
 
+                            if (mysql_num_rows($ApoyoMCconsulta) == 0) 
+                           { 
+                              
+                              $idtabla2="id='tabl'";
+                           } 
+                          else 
+                          { 
+                            
+                             $idtabla2="";
+                           
+                          } 
+
                            if(!$ApoyoMCconsulta)
                            {
                               echo "No se pudo ejecutar la consultaApoyoM";
@@ -93,6 +117,18 @@ require ("cabeza.ctp");
                                    
                            $GrupoACconsulta = mysql_query($consultaGrupoA); 
 
+                           if (mysql_num_rows($GrupoACconsulta) == 0) 
+                           { 
+                             
+                              $idtabla3="id='tabl'";
+                           } 
+                          else 
+                          { 
+                            
+                             $idtabla3="";
+                           
+                          }
+
                            if(!$GrupoACconsulta)
                            {
                               echo "No se pudo ejecutar la consultaGrupoA";
@@ -117,6 +153,19 @@ require ("cabeza.ctp");
                                    
                            $EmpleoCconsulta = mysql_query($consultaEmple); 
 
+                           if (mysql_num_rows($EmpleoCconsulta) == 0) 
+                           { 
+                              
+                              $idtabla4="id='tabl'";
+                           } 
+                          else 
+                          { 
+                            
+                             $idtabla4="";
+                           
+                          }
+
+
                            if(!$EmpleoCconsulta)
                            {
                               echo "No se pudo ejecutar la consultaEmple";
@@ -139,19 +188,22 @@ require ("cabeza.ctp");
                          }
                           $lugarempleop=mysql_fetch_row($consultaa3);
                           $lugaremple = $lugarempleop[0];                
-            ?>
+           
 
+             
+               ?>
 
            <!-- Inicio de la tabla Protesis - Lista de Fav -->
-            <table cellspacing="0" cellpadding="0" > 
+            <table cellspacing="0" cellpadding="0" <?php echo $idtabla1 ?>> 
 
 
-                 <h2>Prótesis<span>.</span></h2>
-
-                  <hr /> 
+                
 
 
-                 <thead>                 
+                 <thead>   
+                  <h2 <?php echo $idtabla1 ?>>Prótesis <span>.</span></h2>
+
+                  <hr <?php echo $idtabla1 ?>/>               
                 <tr>
                   <td style="border: none;"><p>Lugar</p></td>
                   <td style="border: none;"><?php echo $lugar; ?>&nbsp;</td> 
@@ -182,12 +234,12 @@ require ("cabeza.ctp");
           <!-- Fin de la tabla Protesis - Lista de Fav -->
 
            <!-- Inicio de la tabla Apoyo Medico - Lista de Fav -->
-            <table cellspacing="0" cellpadding="0" > 
+            <table cellspacing="0" cellpadding="0" <?php echo $idtabla2 ?>> 
 
 
-                 <h2>Apoyo Medico<span>.</span></h2>
+                 <h2 <?php echo $idtabla2 ?>>Apoyo Medico<span>.</span></h2>
 
-                  <hr /> 
+                  <hr <?php echo $idtabla2 ?>/> 
 
 
                  <thead>                 
@@ -222,12 +274,12 @@ require ("cabeza.ctp");
 
 
           <!-- Inicio de la tabla Grupo de Apoyo - Lista de Fav -->
-            <table cellspacing="0" cellpadding="0" > 
+            <table cellspacing="0" cellpadding="0" <?php echo $idtabla3 ?>> 
 
 
-                 <h2>Apoyo Psicológico<span>.</span></h2>
+                 <h2 <?php echo $idtabla3 ?>>Apoyo Psicológico<span>.</span></h2>
 
-                  <hr /> 
+                  <hr <?php echo $idtabla3 ?>/> 
 
 
                  <thead>                 
@@ -259,12 +311,12 @@ require ("cabeza.ctp");
 
 
            <!-- Inicio de la tabla Buscar emploe - Lista de Fav -->
-            <table cellspacing="0" cellpadding="0" > 
+            <table cellspacing="0" cellpadding="0" <?php echo $idtabla4 ?>> 
 
 
-                 <h2>Empleos Disponibles<span>.</span></h2>
+                 <h2 <?php echo $idtabla4 ?>>Empleos Disponibles<span>.</span></h2>
 
-                  <hr /> 
+                  <hr <?php echo $idtabla4 ?>/> 
 
 
                  <thead> 
@@ -304,6 +356,7 @@ require ("cabeza.ctp");
       </div>
        
      </section> 
+
 
 <?php
 require ("footer.ctp");
