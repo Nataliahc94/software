@@ -20,7 +20,7 @@
 
             	<div class="footer-logo"></div>
 
-	            <p>Este es un proyecto pensado para las personas que son víctimas de las minas antipersonas, para que puedan seguir adelante a pesar de los problemas.
+	            <p>Este proyecto se hizo para las personas que han sido víctimas de minas antipersonal, para que les facilite las búsquedas que les pueden brindar ayuda deacuerdo a su condición 
 	            </p>	        
 
 	         </div>
