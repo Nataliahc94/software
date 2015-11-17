@@ -103,165 +103,274 @@ require ("cabezar.ctp");
     { 
         echo 'Por favor llene todos los campos.';//Si los campos están vacíos.
     } 
-    else 
-    { 
-                $consultaE = "SELECT email FROM usuario WHERE email = '$email' ";
-                             
-                 $emailconsulta = mysql_query($consultaE); 
+    else
+    {
 
-                 if(!$emailconsulta)
-                 {
-                    echo "No se pudo ejecutar la consulta";
-                 }
+        $consultarNombreU1 = "SELECT nombreUsuario FROM uvictima WHERE nombreUsuario = '$nomUsuario' ";
 
-               
-                 $fila=mysql_fetch_row($emailconsulta);
-                 echo $fila[0];
+      $obtenerNomU1= mysql_query($consultarNombreU1);
+      if(!$obtenerNomU1)
+      {
+        echo "Ha ocurrido un error, por favor intentelo nuevamente";
+      }
+      else
+      {
+         $NomUsuario1 = mysql_fetch_row($obtenerNomU1);
+        if( $NomUsuario1[0]==$nomUsuario)
+        {
+          echo"<script>alert('El nombre de usaurio ya se encuentra registrado, por favor intenete con otro nombre de usuario')</script>";
+           echo "Realice el Registro nuevamente, con otro nombre de usuario";
 
-           if($fila[0]!=$email) 
-        { 
-           
-  
-             if($_POST['contraseña'] == $_POST['repContraseña'])
-             {
-               mysql_query("INSERT into usuario values ('','$nombre','$email','$ciudad','$
-                departamento'); "); 
+        }
+        else
+        {
+            $consultarNombreU2 = "SELECT nombreUsuario FROM utiendaprotesis WHERE nombreUsuario = '$nomUsuario' ";
 
-                if( $_POST['opcion']=="0")
-                  {
-                    echo "Debe de Seleccionar un tipo de Usuario";
-                  }
-                  if( $_POST['opcion']=="1")
-                  {
-                         echo "Opcion 1";
-                           $consulta = "SELECT idusuario FROM usuario WHERE email = '$email' ";
-                     
-                             $idconsulta = mysql_query($consulta); 
-
-                             if(!$idconsulta)
-                             {
-                                echo "No se pudo ejecutar la consulta";
-                             }
-                             else
-                             {
-                                 $fila=mysql_fetch_row($idconsulta);
-                                  echo $fila[0];
-
-                                 mysql_query( "INSERT INTO uvictima VALUES('', '$contraseña', '$nomUsuario', '$fila[0]', '1') ;");
-                                  echo 'Este usuario se ha registrado exitosamente.'; 
-
-                             }
-
-             
-                  }
-                   if( $_POST['opcion']=="2")
-                  {
-                         echo "Opcion 2";
-                           $consulta = "SELECT idusuario FROM usuario WHERE email = '$email' ";
-                     
-                             $idconsulta = mysql_query($consulta); 
-
-                             if(!$idconsulta)
-                             {
-                                echo "No se pudo ejecutar la consulta";
-                             }
-                             else
-                             {
-                                 $fila=mysql_fetch_row($idconsulta);
-                                  echo $fila[0];
-
-                                 mysql_query( "INSERT INTO umedico VALUES('', '$contraseña', '$nomUsuario', '$fila[0]', '2') ;");
-                             }
-
-             
-                  }
-                   if( $_POST['opcion']=="3")
-                  {
-                         echo "Opcion 3";
-                           $consulta = "SELECT idusuario FROM usuario WHERE email = '$email' ";
-                     
-                             $idconsulta = mysql_query($consulta); 
-
-                             if(!$idconsulta)
-                             {
-                                echo "No se pudo ejecutar la consulta";
-                             }
-                             else
-                             {
-                                 $fila=mysql_fetch_row($idconsulta);
-                                  echo $fila[0];
-
-                                 mysql_query( "INSERT INTO ugrupoapoyo VALUES('', '$contraseña', '$nomUsuario', '$fila[0]', '3') ;");
-                             }
-
-             
-                  }
-                    if( $_POST['opcion']=="4")
-                  {
-                         echo "Opcion 4";
-                           $consulta = "SELECT idusuario FROM usuario WHERE email = '$email' ";
-                     
-                             $idconsulta = mysql_query($consulta); 
-
-                             if(!$idconsulta)
-                             {
-                                echo "No se pudo ejecutar la consulta";
-                             }
-                             else
-                             {
-                                 $fila=mysql_fetch_row($idconsulta);
-                                  echo $fila[0];
-
-                                 mysql_query( "INSERT INTO utiendaprotesis VALUES('', '$contraseña', '$nomUsuario', '$fila[0]', '4') ;");
-                             }
-
-             
-                  }
-                       if( $_POST['opcion']=="5")
-                  {
-                         echo "Opcion 5";
-                           $consulta = "SELECT idusuario FROM usuario WHERE email = '$email' ";
-                     
-                             $idconsulta = mysql_query($consulta); 
-
-                             if(!$idconsulta)
-                             {
-                                echo "No se pudo ejecutar la consulta";
-                             }
-                             else
-                             {
-                                 $fila=mysql_fetch_row($idconsulta);
-                                  echo $fila[0];
-
-                                 mysql_query( "INSERT INTO uempleador VALUES('', '$contraseña', '$nomUsuario', '$fila[0]', '5') ;");
-                             }
-
-             
-                  }
-
-
+            $obtenerNomU2= mysql_query($consultarNombreU2);
+            if(!$obtenerNomU2)
+            {
+              echo "Ha ocurrido un error, por favor intentelo nuevamente";
+            }
+            else
+            {
+               $NomUsuario2 = mysql_fetch_row($obtenerNomU2);
+              if( $NomUsuario2[0]==$nomUsuario)
+              {
+                echo"<script>alert('El nombre de usaurio ya se encuentra registrado, por favor intenete con otro nombre de usuario')</script>";
+                  echo "Realice el Registro nuevamente, con otro nombre de usuario";
+              }
+              else
+              {
 
                 
-                
+                $consultarNombreU3 = "SELECT nombreUsuario FROM umedico WHERE nombreUsuario = '$nomUsuario' ";
+
+                  $obtenerNomU3= mysql_query($consultarNombreU3);
+                  if(!$obtenerNomU3)
+                  {
+                    echo "Ha ocurrido un error, por favor intentelo nuevamente";
+                  }
+                  else
+                  {
+                     $NomUsuario3 = mysql_fetch_row($obtenerNomU3);
+                    if( $NomUsuario3[0]==$nomUsuario)
+                    {
+                      echo"<script>alert('El nombre de usaurio ya se encuentra registrado, por favor intenete con otro nombre de usuario')</script>";
+                      echo "Realice el Registro nuevamente, con otro nombre de usuario";
+                    }
+                    else
+                    {
+
+                           $consultarNombreU4 = "SELECT nombreUsuario FROM ugrupoapoyo WHERE nombreUsuario = '$nomUsuario' ";
+
+                            $obtenerNomU4= mysql_query($consultarNombreU4);
+                            if(!$obtenerNomU4)
+                            {
+                              echo "Ha ocurrido un error, por favor intentelo nuevamente";
+                            }
+                            else
+                            {
+                                 $NomUsuario4 = mysql_fetch_row($obtenerNomU4);
+                                if( $NomUsuario4[0]==$nomUsuario)
+                                {
+                                  echo"<script>alert('El nombre de usaurio ya se encuentra registrado, por favor intenete con otro nombre de usuario')</script>";
+                                     echo "Realice el Registro nuevamente, con otro nombre de usuario";
+                                }
+                                else
+                                {
+
+                                    $consultarNombreU5 = "SELECT nombreUsuario FROM uempleador WHERE nombreUsuario = '$nomUsuario' ";
+
+                                    $obtenerNomU5= mysql_query($consultarNombreU5);
+                                    if(!$obtenerNomU5)
+                                    {
+                                      echo "Ha ocurrido un error, por favor intentelo nuevamente";
+                                    }
+                                    else
+                                    {
+                                         $NomUsuario5 = mysql_fetch_row($obtenerNomU5);
+                                        if( $NomUsuario5[0]==$nomUsuario)
+                                        {
+                                         echo"<script>alert('El nombre de usaurio ya se encuentra registrado, por favor intenete con otro nombre de usuario')</script>";
+                                           echo "Realice el Registro nuevamente, con otro nombre de usuario";
+                                        }
+                                        else 
+                                      { 
+
+
+                                                  $consultaE = "SELECT email FROM usuario WHERE email = '$email' ";
+                                                               
+                                                   $emailconsulta = mysql_query($consultaE); 
+
+                                                   if(!$emailconsulta)
+                                                   {
+                                                      echo "No se pudo ejecutar la consulta";
+                                                   }
+
+                                                 
+                                                   $fila=mysql_fetch_row($emailconsulta);
+                                                  
+
+
+                                             if($fila[0]!=$email) 
+                                          { 
+                                             
+                                    
+                                               if($_POST['contraseña'] == $_POST['repContraseña'])
+                                               {
+                                                 mysql_query("INSERT into usuario values ('','$nombre','$email','$ciudad','$
+                                                  departamento'); "); 
+
+                                                  if( $_POST['opcion']=="0")
+                                                    {
+                                                      echo "Debe de Seleccionar un tipo de Usuario";
+                                                    }
+                                                    if( $_POST['opcion']=="1")
+                                                    {
+                                                           
+                                                             $consulta = "SELECT idusuario FROM usuario WHERE email = '$email' ";
+                                                       
+                                                               $idconsulta = mysql_query($consulta); 
+
+                                                               if(!$idconsulta)
+                                                               {
+                                                                  echo "Ha ocurrido un error, por favor intentelo nuevamente";
+                                                               }
+                                                               else
+                                                               {
+                                                                   $fila=mysql_fetch_row($idconsulta);
+                                                                   
+
+                                                                   mysql_query( "INSERT INTO uvictima VALUES('', '$contraseña', '$nomUsuario', '$fila[0]', '1') ;");
+                                                                    echo 'Este usuario se ha registrado exitosamente.'; 
+
+                                                               }
+
+                                               
+                                                    }
+                                                     if( $_POST['opcion']=="2")
+                                                    {
+                                                           
+                                                             $consulta = "SELECT idusuario FROM usuario WHERE email = '$email' ";
+                                                       
+                                                               $idconsulta = mysql_query($consulta); 
+
+                                                               if(!$idconsulta)
+                                                               {
+                                                                  echo "No se pudo ejecutar la consulta";
+                                                               }
+                                                               else
+                                                               {
+                                                                   $fila=mysql_fetch_row($idconsulta);
+                                                                    
+
+                                                                   mysql_query( "INSERT INTO umedico VALUES('', '$contraseña', '$nomUsuario', '$fila[0]', '2') ;");
+                                                               }
+
+                                               
+                                                    }
+                                                     if( $_POST['opcion']=="3")
+                                                    {
+                                                           
+                                                             $consulta = "SELECT idusuario FROM usuario WHERE email = '$email' ";
+                                                       
+                                                               $idconsulta = mysql_query($consulta); 
+
+                                                               if(!$idconsulta)
+                                                               {
+                                                                  echo "No se pudo ejecutar la consulta";
+                                                               }
+                                                               else
+                                                               {
+                                                                   $fila=mysql_fetch_row($idconsulta);
+                                                                    
+
+                                                                   mysql_query( "INSERT INTO ugrupoapoyo VALUES('', '$contraseña', '$nomUsuario', '$fila[0]', '3') ;");
+                                                               }
+
+                                               
+                                                    }
+                                                      if( $_POST['opcion']=="4")
+                                                    {
+                                                           
+                                                             $consulta = "SELECT idusuario FROM usuario WHERE email = '$email' ";
+                                                       
+                                                               $idconsulta = mysql_query($consulta); 
+
+                                                               if(!$idconsulta)
+                                                               {
+                                                                  echo "No se pudo ejecutar la consulta";
+                                                               }
+                                                               else
+                                                               {
+                                                                   $fila=mysql_fetch_row($idconsulta);
+                                                                   
+
+                                                                   mysql_query( "INSERT INTO utiendaprotesis VALUES('', '$contraseña', '$nomUsuario', '$fila[0]', '4') ;");
+                                                               }
+
+                                               
+                                                    }
+                                                         if( $_POST['opcion']=="5")
+                                                    {
+                                                          
+                                                             $consulta = "SELECT idusuario FROM usuario WHERE email = '$email' ";
+                                                       
+                                                               $idconsulta = mysql_query($consulta); 
+
+                                                               if(!$idconsulta)
+                                                               {
+                                                                  echo "No se pudo ejecutar la consulta";
+                                                               }
+                                                               else
+                                                               {
+                                                                   $fila=mysql_fetch_row($idconsulta);
+                                                                    
+                                                                   mysql_query( "INSERT INTO uempleador VALUES('', '$contraseña', '$nomUsuario', '$fila[0]', '5') ;");
+                                                               }
+
+                                               
+                                                    }
+
+
+
+                                                  
+                                                  
 
 
 
 
-             }
-             else
-             {
-                echo "  Las contraseñas no coinciden";
-             }
-         }
-        else 
-        {  
-            
-             echo "  Ya se encuentra registrado";
-        } 
-          
-                
+                                               }
+                                               else
+                                               {
+                                                  echo "  Las contraseñas no coinciden";
+                                               }
+                                           }
+                                          else 
+                                          {  
+                                              
+                                               echo " El usuario ya se encuentra registrado";
+                                          } 
+                                            
+                                                  
+                                      } 
+
+                                    }
+                                  
+                                }
+
+                           }
+
+                    }
+
+                }
+              } 
+           }
+        }   
+      }
     } 
 
+    
 }?> 
 
 

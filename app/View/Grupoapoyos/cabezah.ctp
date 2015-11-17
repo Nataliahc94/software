@@ -66,7 +66,7 @@
             </a>            
 
              <ul id="nav" class="nav">
-                <li><a class="smoothscroll" href="./home">Home</a></li>
+                <li><a class="smoothscroll" href="../pages/home">Home</a></li>
                  <li ><a class="smoothscroll" href="../protesis/index">Prótesis.</a>
                         
                  </li>
