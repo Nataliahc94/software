@@ -34,10 +34,10 @@ require ("cabeza.ctp");
                   <input name="nombre" type="text" id="contactName" placeholder="Nombre" value="" minLength="2" required />
                   </div>
                    <div>
-                   <input name="direccion" type="text" id="contactEmail" placeholder="Direccion" value="" required />
+                   <input name="direccion" type="text"  placeholder="Direccion" value="" required />
                    </div>
 	                 <div>
-                   <input name="telefono" type="text" id="contactEmail" placeholder="Telefono" value="" required />
+                   <input name="telefono" type="text" onkeypress="return valida(event)" placeholder="Telefono" value="" required />
                    </div>
                    <div>
                      <button class="submitform" name="enviar">Registar</button>
@@ -54,6 +54,25 @@ require ("cabeza.ctp");
               </fieldset>
           </form> <!-- Form End -->
 
+                <script>
+                    function valida(e)
+                    {
+                        tecla = (document.all) ? e.keyCode : e.which;
+
+                        //Tecla de retroceso para borrar, siempre la permite
+                        if (tecla==8)
+                        {
+                            return true;
+                        }
+                            
+                        // Patron de entrada, en este caso solo acepta numeros
+                        patron =/[0-9]/;
+                        tecla_final = String.fromCharCode(tecla);
+                        return patron.test(tecla_final);
+                   }
+              </script>
+
+
        <?php
 
             $nombre=$_POST['nombre']; 
@@ -68,6 +87,11 @@ require ("cabeza.ctp");
 		    { 
                 session_start(); 
                 $idgrupo=$_SESSION["idvariable"];
+
+
+
+
+
            
 		    	
 		    	 $consultaE = "INSERT INTO grupoapoyo(`idgrupoApoyo`, `nombre`, `direccion`, `telefono`, `ugrupoApoyo_idugrupoApoyo`, `listaFavoritos_idlistaFavoritos`) VALUES ('','$nombre','$direccion','$telefono',$idgrupo,null) ; ";

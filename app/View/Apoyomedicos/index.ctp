@@ -38,7 +38,7 @@ require ("cabezaA.ctp");
                    <input name="direccion" type="text" id="contactEmail" placeholder="Direccion" value="" required />
                    </div>
                    <div>
-                   <input name="telefono" type="text" id="contactEmail" placeholder="Telefono" value="" required />
+                   <input name="telefono" type="text" id="contactEmail" onkeypress="return valida(event)" placeholder="Telefono" value="" required />
                    </div>
                     <div>
                      <button class="submitform" name="enviar">Registrar</button>
@@ -54,6 +54,26 @@ require ("cabezaA.ctp");
 
                    </fieldset>
           </form> <!-- Form End -->
+
+             <script>
+                    function valida(e)
+                    {
+                        tecla = (document.all) ? e.keyCode : e.which;
+
+                        //Tecla de retroceso para borrar, siempre la permite
+                        if (tecla==8)
+                        {
+                            return true;
+                        }
+                            
+                        // Patron de entrada, en este caso solo acepta numeros
+                        patron =/[0-9]/;
+                        tecla_final = String.fromCharCode(tecla);
+                        return patron.test(tecla_final);
+                   }
+              </script>
+
+
        <?php
 
             $nombre=$_POST['nombre']; 
