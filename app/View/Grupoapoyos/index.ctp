@@ -83,33 +83,48 @@ require ("cabeza.ctp");
             {
             	echo 'Por favor llene todos los campos.';//Si los campos están vacíos.
             }
-            else 
-		    { 
-                session_start(); 
-                $idgrupo=$_SESSION["idvariable"];
+            else
+            {
 
+                   $consultaV=" SELECT idgrupoApoyo FROM `grupoapoyo` WHERE nombre='$nombre' or direccion='$direccion' or telefono='$telefono' ;";
+                    $cvalida= mysql_query($consultaV);
+                    if(!$cvalida)
+                    {
+                      echo "Ha ocurrido un error, por favor realice nuevamente el registro";
+                    }
+                     $validarexistencia = mysql_fetch_row($cvalida);
+                     if($validarexistencia[0]!="")
+                     {
+                        echo "El grupo de Apoyo ya se encuentra registrado";                       
+                     }
+                     else
+                     {
+                        session_start(); 
+                        $idgrupo=$_SESSION["idvariable"];
 
+                          $consultaE = "INSERT INTO grupoapoyo(`idgrupoApoyo`, `nombre`, `direccion`, `telefono`, `ugrupoApoyo_idugrupoApoyo`, `listaFavoritos_idlistaFavoritos`) VALUES ('','$nombre','$direccion','$telefono',$idgrupo,null) ; ";
+                                     
+                         $consulta = mysql_query($consultaE); 
 
+                         if(!$consulta)
+                         {
+                            echo "No se pudo realizar la operación ";
+                         }
+                         else
+                         {
+                          echo "se ha registrado exitosamente el grupo de apoyo";
+                         }
 
+                     }
+            }
 
            
-		    	
-		    	 $consultaE = "INSERT INTO grupoapoyo(`idgrupoApoyo`, `nombre`, `direccion`, `telefono`, `ugrupoApoyo_idugrupoApoyo`, `listaFavoritos_idlistaFavoritos`) VALUES ('','$nombre','$direccion','$telefono',$idgrupo,null) ; ";
-                             
-                 $consulta = mysql_query($consultaE); 
-
-                 if(!$consulta)
-                 {
-                    echo "No se pudo realizar la operación ";
-                 }
-                 else
-                 {
-                 	echo "se ha registrado exitosamente el grupo de apoyo";
-                 }
+         
+               
 
 		    	
 
-		    }
+		    
     ?>
 <?php
 require ("footer.ctp");

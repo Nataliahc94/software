@@ -84,23 +84,40 @@ require ("cabeza.ctp");
             	echo 'Por favor llene todos los campos.';//Si los campos están vacíos.
             }
             else 
-		    { 
-                session_start(); 
-                $idempleador=$_SESSION["idempleador"];
-           
-		    	
-		        	 $consultaE = "INSERT INTO lugarempleo(`idlugarEmpleo`, `nombre`, `direccion`, `telefono`, `uempleador_iduempleador`) VALUES ('','$nombre','$direccion','$telefono',$idempleador) ; ";
-                             
-                 $consulta = mysql_query($consultaE); 
+		       { 
 
-                 if(!$consulta)
-                 {
-                    echo "No se pudo realizar la operación ";
-                 }
-                 else
-                 {
-                 	echo "Se ha realizado exitosamente el regitro de lugar de empleo";
-                 }
+                 $consultaV=" SELECT idlugarEmpleo FROM `lugarempleo` WHERE nombre='$nombre' or direccion='$direccion' or telefono='$telefono' ;";
+                    $cvalida= mysql_query($consultaV);
+                    if(!$cvalida)
+                    {
+                      echo "Ha ocurrido un error, por favor realice nuevamente el registro";
+                    }
+                     $validarexistencia = mysql_fetch_row($cvalida);
+                     if($validarexistencia[0]!="")
+                     {
+                        echo "El Lugar de empleo ya se encuentra registrado";                       
+                     }
+                     else
+                     {
+                          session_start(); 
+                            $idempleador=$_SESSION["idempleador"];
+                       
+                      
+                           $consultaE = "INSERT INTO lugarempleo(`idlugarEmpleo`, `nombre`, `direccion`, `telefono`, `uempleador_iduempleador`) VALUES ('','$nombre','$direccion','$telefono',$idempleador) ; ";
+                                         
+                             $consulta = mysql_query($consultaE); 
+
+                             if(!$consulta)
+                             {
+                                echo "No se pudo realizar la operación ";
+                             }
+                             else
+                             {
+                              echo "Se ha realizado exitosamente el regitro de lugar de empleo";
+                             }
+                     }
+
+                
 
 		    	
 
