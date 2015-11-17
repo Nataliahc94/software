@@ -76,27 +76,43 @@ require ("cabezal.ctp");
                  
                  if($fila1[0]==1)
                  {
-                    $consultaid1 = "SELECT iduvictima FROM uvictima WHERE nombreUsuario= '$nomUsuario'";                      
+                    $consultaid1 = "SELECT iduvictima FROM uvictima WHERE nombreUsuario= '$nomUsuario' and password='$contraseña' ";                      
                      $tipo1consultaid = mysql_query($consultaid1); 
 
                      if(!$tipo1consultaid)
                      {
-                        echo "No se pudo ejecutar la consulta";
+                        echo"<script>alert('La contraseña y el nombre de usuario no coinciden   ')</script>";
+                          echo "Por favor, vuelve a realizar el login";
                      }
-                      $fila1id=mysql_fetch_row($tipo1consultaid);
+                     else
+                     {                     
+                        $fila1id=mysql_fetch_row($tipo1consultaid);                        
+                        global $idvictima;
+                        $idvictima = $fila1id[0];
+                       if($idvictima!="")
+                       {
+                            session_start(); 
 
+                           $_SESSION["idvictima"] = $fila1id[0];
+                            echo "<script language='JavaScript'>";                    
+                            echo "location = '../pages/usuario'"; 
+                            echo "</script>"; 
+                       }
+                       else
+                       {
+                         echo"<script>alert('La contraseña y el nombre de usuario no coinciden   ')</script>";
+                          echo "Por favor, vuelve a realizar el login";
+                       }
+                       
+                       
+                           
+
+                      }
+                     
+                   
                       
-                      global $idvictima;
-                     $idvictima = $fila1id[0];
-                      echo $idvictima;
-                      session_start(); 
-
-                     $_SESSION["idvictima"] = $fila1id[0];
-                      echo "<script language='JavaScript'>";                    
-                      echo "location = '../pages/usuario'"; 
-                      echo "</script>"; 
-
-                      echo "El usuario es Victima";// acá se hace el enlace para que pueda ingresar a los privilegios que tiene como usuario
+                     
+                     
 
                  }
                  ///////////////////////////////////
@@ -113,33 +129,41 @@ require ("cabezal.ctp");
                  if($fila2[0]==2)
                  {
 
-                     $consultaid2 = "SELECT idumedico FROM umedico WHERE nombreUsuario= '$nomUsuario'";                      
+                     $consultaid2 = "SELECT idumedico FROM umedico WHERE nombreUsuario= '$nomUsuario'  and password='$contraseña' ";                      
                      $tipo2consultaid = mysql_query($consultaid2); 
 
                      if(!$tipo2consultaid)
                      {
-                        echo "No se pudo ejecutar la consulta";
+                        echo"<script>alert('La contraseña y el nombre de usuario no coinciden   ')</script>";
+                          echo "Por favor, vuelve a realizar el login";
                      }
-                      $fila2id=mysql_fetch_row($tipo2consultaid);
+                     else
+                     {
+                        $fila2id=mysql_fetch_row($tipo2consultaid);                      
+                        global $idmedico;
+                       $idmedico = $fila2id[0];
+                       if($idmedico!="")
+                       {
+                          session_start(); 
 
+                           $_SESSION["idmedico"] = $fila2id[0];
+                            echo "<script language='JavaScript'>";                    
+                            echo "location = '../apoyomedicos/inicio'"; 
+                            echo "</script>"; 
+
+                       }
+                       else
+                       {
+                           echo"<script>alert('La contraseña y el nombre de usuario no coinciden   ')</script>";
+                          echo "Por favor, vuelve a realizar el login";
+                       }
+                        
+                     }
                       
-                      global $idmedico;
-                     $idmedico = $fila2id[0];
-                      echo $idmedico;
-                      session_start(); 
-
-                     $_SESSION["idmedico"] = $fila2id[0];
-                      echo "<script language='JavaScript'>";                    
-                      echo "location = '../apoyomedicos/inicio'"; 
-                      echo "</script>"; 
-
-
-                    echo "El usuario es Medico";// acá se hace el enlace para que pueda ingresar a los privilegios que tiene como usuario
-                     
 
                  }
                  //////////////////////////////////////
-                  $consulta3 = "SELECT tipo FROM ugrupoapoyo WHERE nombreUsuario= '$nomUsuario'";                          
+                  $consulta3 = "SELECT tipo FROM ugrupoapoyo WHERE nombreUsuario= '$nomUsuario' ";                          
                  $tipo3consulta = mysql_query($consulta3); 
 
                  if(!$tipo3consulta)
@@ -151,32 +175,41 @@ require ("cabezal.ctp");
                  if($fila3[0]==3)
                  {
 
-                    $consultaid = "SELECT idugrupoApoyo FROM ugrupoapoyo WHERE nombreUsuario= '$nomUsuario'";                      
-                 $tipo3consultaid = mysql_query($consultaid); 
+                    $consultaid = "SELECT idugrupoApoyo FROM ugrupoapoyo WHERE nombreUsuario= '$nomUsuario' and password='$contraseña' ";                      
+                      $tipo3consultaid = mysql_query($consultaid); 
 
-                 if(!$tipo3consultaid)
-                 {
-                    echo "No se pudo ejecutar la consulta";
-                 }
-                  $fila3id=mysql_fetch_row($tipo3consultaid);
+                       if(!$tipo3consultaid)
+                       {
+                          echo"<script>alert('La contraseña y el nombre de usuario no coinciden   ')</script>";
+                                echo "Por favor, vuelve a realizar el login";
+                       }
+                       else 
+                       {
+                            $fila3id=mysql_fetch_row($tipo3consultaid);                            
+                            global $idgrupoapoyo;
+                            $idgrupoapoyo = $fila3id[0];
+                            if($idgrupoapoyo!="")
+                            {
+                                session_start(); 
 
-                  
-                  global $idgrupoapoyo;
-                 $idgrupoapoyo = $fila3id[0];
-                  echo $idgrupoapoyo;
-                  session_start(); 
+                                $_SESSION["idvariable"] = $fila3id[0];
+                                echo "<script language='JavaScript'>";                    
+                                echo "location = '../grupoapoyos/inicio'"; 
+                                echo "</script>"; 
 
-                 $_SESSION["idvariable"] = $fila3id[0];
-                  echo "<script language='JavaScript'>";                    
-                  echo "location = '../grupoapoyos/inicio'"; 
-                  echo "</script>"; 
+                            }
+                            else
+                            {
+                               echo"<script>alert('La contraseña y el nombre de usuario no coinciden   ')</script>";
+                                echo "Por favor, vuelve a realizar el login";
+                            }
 
-
-                    echo "El usuario es Grupo de Apoyo";
+                            
+                        }    
 
                  }
                  ////////////////////////////////////////
-                  $consulta4 = "SELECT tipo FROM utiendaprotesis WHERE nombreUsuario= '$nomUsuario'";                          
+                  $consulta4 = "SELECT tipo FROM utiendaprotesis WHERE nombreUsuario= '$nomUsuario' ";                          
                  $tipo4consulta = mysql_query($consulta4); 
 
                  if(!$tipo4consulta)
@@ -187,31 +220,39 @@ require ("cabezal.ctp");
                  
                  if($fila4[0]==4)
                  {
-                     $consultaid4 = "SELECT idutiendaprotesis FROM utiendaprotesis WHERE nombreUsuario= '$nomUsuario'";                      
+                     $consultaid4 = "SELECT idutiendaprotesis FROM utiendaprotesis WHERE nombreUsuario= '$nomUsuario' and password='$contraseña'";                      
                      $tipo4consultaid = mysql_query($consultaid4); 
 
                      if(!$tipo4consultaid)
                      {
-                        echo "No se pudo ejecutar la consulta";
+                       echo"<script>alert('La contraseña y el nombre de usuario no coinciden   ')</script>";
+                                echo "Por favor, vuelve a realizar el login";
                      }
-                      $fila4id=mysql_fetch_row($tipo4consultaid);
-
-                      
-                      global $idtprotesis;
-                     $idtprotesis = $fila4id[0];
-                      echo $idtprotesis;
-                      session_start(); 
-
-                     $_SESSION["idtprotesis"] = $fila4id[0];
-                      echo "<script language='JavaScript'>";                    
-                      echo "location = '../lugarprotesis/inicio'"; 
-                      echo "</script>"; 
-                    echo "El usuario es Tienda Protesis";// acá se hace el enlace para que pueda ingresar a los privilegios que tiene como usuario
+                     else
+                     {
+                          $fila4id=mysql_fetch_row($tipo4consultaid);                          
+                          global $idtprotesis;
+                          $idtprotesis = $fila4id[0];
+                          if($idtprotesis!="")
+                          {
+                              session_start(); 
+                           $_SESSION["idtprotesis"] = $fila4id[0];
+                            echo "<script language='JavaScript'>";                    
+                            echo "location = '../lugarprotesis/inicio'"; 
+                            echo "</script>"; 
+                          }
+                          else
+                          {
+                             echo"<script>alert('La contraseña y el nombre de usuario no coinciden   ')</script>";
+                                echo "Por favor, vuelve a realizar el login";
+                          }
+                          
+                    }
                      
 
                  }
                  ///////////////////////////////////////////////
-                 $consulta5 = "SELECT tipo FROM uempleador WHERE nombreUsuario= '$nomUsuario'";                          
+                 $consulta5 = "SELECT tipo FROM uempleador WHERE nombreUsuario= '$nomUsuario' ";                          
                  $tipo5consulta = mysql_query($consulta5); 
 
                  if(!$tipo5consulta)
@@ -222,33 +263,39 @@ require ("cabezal.ctp");
                  
                  if($fila5[0]==5)
                  {
-                      $consultaid5 = "SELECT iduempleador FROM uempleador WHERE nombreUsuario= '$nomUsuario'";                      
+                      $consultaid5 = "SELECT iduempleador FROM uempleador WHERE nombreUsuario= '$nomUsuario' and password='$contraseña'";                      
                      $tipo5consultaid = mysql_query($consultaid5); 
 
                      if(!$tipo5consultaid)
                      {
-                        echo "No se pudo ejecutar la consulta";
+                       echo"<script>alert('La contraseña y el nombre de usuario no coinciden   ')</script>";
+                                echo "Por favor, vuelve a realizar el login";
                      }
-                      $fila5id=mysql_fetch_row($tipo5consultaid);
+                     else
+                     {
+                          $fila5id=mysql_fetch_row($tipo5consultaid);                          
+                          global $idempleador;
+                          $idempleador = $fila5id[0];
+                          if($idempleador!="")
+                          {
+                              session_start(); 
 
-                      
-                      global $idempleador;
-                     $idempleador = $fila5id[0];
-                      echo $idempleador;
-                      session_start(); 
-
-                     $_SESSION["idempleador"] = $fila5id[0];
-                      echo "<script language='JavaScript'>";                    
-                      echo "location = '../lugarempleos/inicio'"; 
-                      echo "</script>"; 
-                      
-                    echo "El usuario es Empleador";// acá se hace el enlace para que pueda ingresar a los privilegios que tiene como usuario
-                    
-
+                             $_SESSION["idempleador"] = $fila5id[0];
+                              echo "<script language='JavaScript'>";                    
+                              echo "location = '../lugarempleos/inicio'"; 
+                              echo "</script>"; 
+                          }
+                          else
+                          {
+                            echo"<script>alert('La contraseña y el nombre de usuario no coinciden   ')</script>";
+                                echo "Por favor, vuelve a realizar el login";
+                          }
+                         
+                    }
                  }
                  else
                  {
-                    echo "La Contraseña o el Nombre de usuario no son correctos";
+                    echo ";  La Contraseña o el Nombre de usuario no son correctos";
                     
                  }
           }
