@@ -1,5 +1,6 @@
 <?php
 require ("cabezau.ctp");
+$var=false;
 ?>
 	
 	 <section id="contact">
@@ -54,7 +55,7 @@ require ("cabezau.ctp");
 					<tr>
 							
 							<td style="border: none;">
-							<button  name="maillist" type="button"  id="favorito" onclick="agregar_favoritos('<?php echo h($empleo['Empleo']['idempleo']); ?>')">Favorito</button>
+							<button  href="javascript:void(0)" onMouseUp="alert('Se ha marcado como favorito')" name="maillist" type="button"  id='favorito'  onclick="agregar_favoritos('<?php echo h($empleo['Empleo']['idempleo']); ?>')">Favorito</button>
 							
 					</tr>
 					<tr>
@@ -70,31 +71,34 @@ require ("cabezau.ctp");
 
 			<script type="text/javascript">
 		
-		function agregar_favoritos(idPro) {
- 			console.log("agregado a favoritos    "+idPro);
-	
-			$.ajax({
-	            beforeSend: function() {},
-	            type: "POST",
-	            url: "favoritos",
-	            data: {
-	                'idempleo': idPro
-	            }
-	        }).done(function(t) {
-	            if(t){
-	               
-	              //  console.log(t);
-	            }else{
-	                console.log("MIERDA");
-	            }
-	            return false;
-	            NProgress.done();
+				function agregar_favoritos(idPro) {
+		 			console.log("agregado a favoritos    "+idPro);
+		 			<?php $var = true ?>
+			
+					$.ajax({
+			            beforeSend: function() {},
+			            type: "POST",
+			            url: "favoritos",
+			            data: {
+			                'idempleo': idPro
+			            }
+			        }).done(function(t) {
+			            if(t){
+			               
+			              //  console.log(t);
+			            }else{
+			                console.log("MIERDA");
+			            }
+			            return false;
+			            NProgress.done();
 
-	        });
-	   }
-
+			        });
+			   }
+		
 	</script>
+
 			
 <?php
 require ("footer.ctp");
+
 ?>

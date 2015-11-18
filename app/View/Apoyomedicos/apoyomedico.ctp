@@ -48,7 +48,7 @@ include_once "conexion.php";
 							<td style="border: none;">
 					
 				
-					<button  name="maillist" type="button"  id="favorito" onclick="agregar_favoritos('<?php echo h($apoyomedico['Apoyomedico']['idapoyoMedico']); ?>')">Favorito</button>
+					<button href="javascript:void(0)" onMouseUp="alert('Se ha marcado como favorito')"  name="maillist" type="button"  id="favorito" onclick="agregar_favoritos('<?php echo h($apoyomedico['Apoyomedico']['idapoyoMedico']); ?>')">Favorito</button>
 
 								
 						</td>	

@@ -15,7 +15,7 @@ require ("cabeza.ctp");
 
           <h2>Registrar Empleo<span>.</span></h2>
 
-            <hr />  
+            <hr />    
 
           </div>
        
@@ -82,7 +82,7 @@ require ("cabeza.ctp");
 
                
                  $fila=mysql_fetch_row($cn);
-                 echo $fila[0];
+                 
                  $idlugar=$fila[0];
 
                 
@@ -94,7 +94,7 @@ require ("cabeza.ctp");
 
                  if(!$consultan)
                  {
-                    echo "No se pudo ejecutar la consulta 2";
+                    echo "El lugar de empleo no se encuentra registrado, por favor realice el registro nuevamente";
                  }
                  else
                  {

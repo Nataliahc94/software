@@ -542,6 +542,10 @@ input[type="button"] {
 	    padding: 3px 100px;
         margin-left: 50px;
 }
+#favorito2
+{
+	    visibility: hidden;
+}
 #listafv 
 {
         margin-left: 450px;

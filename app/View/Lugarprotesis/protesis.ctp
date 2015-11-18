@@ -72,7 +72,7 @@ require ("cabeza.ctp");
             	echo 'Por favor llene todos los campos.';//Si los campos están vacíos.
             }
             else 
-		    { 
+		       { 
                 $consultaE = "SELECT idlugarprotesis FROM lugarprotesis WHERE nombre='$lugar' ;";
                              
                  $cn = mysql_query($consultaE); 
@@ -86,7 +86,7 @@ require ("cabeza.ctp");
                  $fila=mysql_fetch_row($cn);
                
                  $idlugar=$fila[0];
-                   echo $idlugar;
+                   
                   
 
 
@@ -97,11 +97,11 @@ require ("cabeza.ctp");
 
                  if(!$consultan)
                  {
-                    echo "No se pudo ejecutar la consulta2";
+                    echo "No se pudo realizar el registro, por favor intentelo nuevamente";
                  }
                  else
                  {
-                    echo "el registro del Empleo Fue exitoso";
+                    echo "El registro del Empleo Fue éxitoso";
                  }
 
 		    }

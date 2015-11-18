@@ -83,24 +83,41 @@ require ("cabeza.ctp");
             	echo 'Por favor llene todos los campos.';//Si los campos están vacíos.
             }
             else 
-		    { 
-                
-                session_start(); 
-                $idtprotesis=$_SESSION["idtprotesis"];
-           
-		    	
-		    	 $consultaE = "INSERT INTO `lugarprotesis`(`idlugarProtesis`, `nombre`, `direccion`, `telefono`, `utiendaProtesis_idutiendaProtesis`) VALUES ('','$nombre','$direccion','$telefono',$idtprotesis) ; ";
-                             
-                 $consulta = mysql_query($consultaE); 
+		        { 
 
-                 if(!$consulta)
-                 {
-                    echo "No se pudo ejecutar la consulta ";
-                 }
-                 else
-                 {
-                 	echo "el registro de grupo de Apoyo fue exitoso";
-                 }
+                   $consultaV=" SELECT idlugarProtesis FROM `lugarprotesis` WHERE nombre='$nombre' or direccion='$direccion' or telefono='$telefono' ;";
+                    $cvalida= mysql_query($consultaV);
+                    if(!$cvalida)
+                    {
+                      echo "Ha ocurrido un error, por favor realice nuevamente el registro";
+                    }
+                     $validarexistencia = mysql_fetch_row($cvalida);
+                     if($validarexistencia[0]!="")
+                     {
+                        echo "El Lugar de prótesis ya se encuentra registrado";                       
+                     }
+                     else
+                     {
+                          session_start(); 
+                          $idtprotesis=$_SESSION["idtprotesis"];
+                     
+                    
+                           $consultaE = "INSERT INTO `lugarprotesis`(`idlugarProtesis`, `nombre`, `direccion`, `telefono`, `utiendaProtesis_idutiendaProtesis`) VALUES ('','$nombre','$direccion','$telefono',$idtprotesis) ; ";
+                                       
+                           $consulta = mysql_query($consultaE); 
+
+                           if(!$consulta)
+                           {
+                              echo "No se pudo ejecutar la consulta ";
+                           }
+                           else
+                           {
+                            echo "El registro del lugar de prótesis fue éxitoso";
+                           }
+
+                     }
+                
+                
 
 		    	
 

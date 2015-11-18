@@ -86,27 +86,39 @@ require ("cabezaA.ctp");
             	echo 'Por favor llene todos los campos.';//Si los campos están vacíos.
             }
             else 
-		    { 
-                session_start(); 
-                $idmedico=$_SESSION["idmedico"];
-           
-		    	
-		    	 $consultaE = "INSERT INTO apoyomedico(`idapoyoMedico`, `especialista`, `nombre`, `direccion`, `telefono`, `umedico_idumedico`, `listaFavoritos_idlistaFavoritos`)VALUES ('','$especialista','$nombre','$direccion','$telefono','$idmedico',null) ; ";
-                             
-                 $consulta = mysql_query($consultaE); 
+		        { 
 
-                 if(!$consulta)
-                 {
-                    echo "No se pudo realizar la operación ";
-                 }
-                 else
-                 {
-                 	echo "Se ha realizado registro del apoyo medico";
-                 }
+                 $consultaV=" SELECT idapoyoMedico FROM `apoyomedico` WHERE  direccion='$direccion' or telefono='$telefono'  ;";
+                    $cvalida= mysql_query($consultaV);
+                    if(!$cvalida)
+                    {
+                      echo "Ha ocurrido un error, por favor realice nuevamente el registro";
+                    }
+                     $validarexistencia = mysql_fetch_row($cvalida);
+                     if($validarexistencia[0]!="")
+                     {
+                        echo "El Apoyo medico ya se encuentra registrado";                       
+                     }
+                     else
+                     {
+                          session_start(); 
+                            $idmedico=$_SESSION["idmedico"];
+                       
+                      
+                           $consultaE = "INSERT INTO apoyomedico(`idapoyoMedico`, `especialista`, `nombre`, `direccion`, `telefono`, `umedico_idumedico`, `listaFavoritos_idlistaFavoritos`)VALUES ('','$especialista','$nombre','$direccion','$telefono','$idmedico',null) ; ";
+                                         
+                             $consulta = mysql_query($consultaE); 
 
-		    	
-
-		    }
+                             if(!$consulta)
+                             {
+                                echo "No se pudo realizar la operación ";
+                             }
+                             else
+                             {
+                              echo "Se ha realizado registro del apoyo medico";
+                             }
+                     }
+            }
     ?>
 <?php
 require ("footer.ctp");

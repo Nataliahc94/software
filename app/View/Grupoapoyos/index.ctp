@@ -112,7 +112,7 @@ require ("cabeza.ctp");
                          }
                          else
                          {
-                          echo "se ha registrado exitosamente el grupo de apoyo";
+                          echo "se ha registrado éxitosamente el grupo de apoyo";
                          }
 
                      }
